@@ -16,7 +16,7 @@ const Friends = () => {
             .then((data) => {
                 setUser(data); 
          })};
-
+//TODO when click on friend link, refreshes page contents with new content
         fetchItems();
     }, []);
 

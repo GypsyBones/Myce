@@ -47,7 +47,7 @@ function Navbar () {
 //TODO Hamburger doesn't show SIGNUP, as well as the Profile dropdown doesn't drop down
     return (
         <>
-            <Nav className='navbar'>
+            <Nav className='navbar fixed-top'>
                 <Link to='/' className='navbar-logo'>
                     MYCE
                 </Link>

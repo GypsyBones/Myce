@@ -25,15 +25,23 @@ const Profile = () => {
             <img className="profilePicLg profilePic" src={user.avatar || defaultUserPic}></img>
         </Col>
         <Col md="4" className="profileName">
-          <h2>{user.name}</h2>
-          <h6>{user.username}</h6>
+          <p className="title2">{user.name}</p>
+          <p className="title4">{user.username}</p>
         </Col>
-        <Col md="4" className="profile-stats">
-          <ul>  
-            <li>13                 <span>Projects</span></li>
-            <li>2                  <span>Following</span></li>
-            <li>{user.followers}   <span>Followers</span></li>
-          </ul>
+        <Col className="profile-stats">
+          <Row className="profile-stats-row">
+            <Col md="3">  
+                <p className="stat">13                 <span>Projects</span></p>
+            </Col>
+            <Col md="3">
+              <p className="stat">2                  <span>Following</span></p>
+            </Col>
+            <Col md="3">
+              <p className="stat">{user.followers}   <span>Followers</span></p>
+            </Col>
+            <Col md="1">
+            </Col>
+          </Row>
         </Col>
       </Row>
       <hr />
@@ -41,18 +49,21 @@ const Profile = () => {
         <Col md="3" >
           <Row>
             <Col className="side-panel">
-              <Row>
+              <Row className="card-row">
+                <Card className="friends-card"> 
+                  <Card.Header>Bio:</Card.Header>
+                    <Card.Body>
+                      <p>{user.bio}</p>
+                    </Card.Body>
+                  </Card>
+              </Row>
+              <Row className="card-row">
                 <Card className="friends-card">
                   <Card.Header>Friends:</Card.Header>
                   <Card.Body>
                     <Friends />
                   </Card.Body>
                 </Card>
-                
-              </Row>
-              <Row>
-                <p>Bio:</p>
-                <p>{user.bio}</p>
               </Row>
             </Col>
           </Row>

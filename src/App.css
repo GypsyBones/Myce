@@ -20,8 +20,16 @@
   font-size: 3rem;
 }
 
+p {
+  margin-bottom: 0px !important;
+}
+
 h1 {
   font-size: 40px;
+}
+
+h2 {
+  margin-bottom: 0px;
 }
 
 h3 {
@@ -29,16 +37,24 @@ h3 {
 }
 
 hr {
-  margin: 25px;
+  margin: 15px !important;
+  padding-bottom: 25px;
 }
 
 .container {
     margin: auto;
     background: #fff;
-    width: 90%;
 }
 
-
+.title2 {
+  font-size: 55px;
+  margin: 0px;
+}
+.title4 {
+  font-size: 35;
+  margin: 0;
+  margin-top: -25px;
+}
 .profilePicSm {
   height: 38px;
   width: 38px;
@@ -63,13 +79,18 @@ hr {
 
 .profilePicLg {
   position: flex;
-  margin-top: -100px;
-  margin-left: 100px;
+  margin-top: -80px;
+  margin-left: 50px;
   border: solid;
   height: 150px;
   width: 150px;
   border-color: blueviolet;
   border-radius: 50%;
+}
+
+.profile-stats-row {
+  justify-content: end;
+  margin-right: 35px;
 }
 
 .profilePic:hover {

@@ -12,7 +12,7 @@
   font-size: 25px;
 }
 
-.about, .communities, .createNew, .home, .jobs, .logOut, .market, .profile, .settings, .signUp, .workshops {
+.about, .communities, .createNew, .home, .jobs, .logOut, .market, .settings, .signUp, .workshops {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -20,6 +20,80 @@
   font-size: 3rem;
 }
 
+h1 {
+  font-size: 40px;
+}
+
 h3 {
  color: aliceblue;
 }
+
+hr {
+  margin: 25px;
+}
+
+.container {
+    margin: auto;
+    background: #fff;
+    width: 90%;
+}
+
+
+.profilePicSm {
+  height: 38px;
+  width: 38px;
+  margin-right: 10px;
+  border: solid;
+  border-width: 1.5px;
+  border-color: blueviolet;
+  border-radius: 50%;
+}
+
+.profile-post-area {
+  display: flex;
+}
+
+.profilePicMd {
+  border: solid;
+  height: 70px;
+  width: 70px;
+  border-color: blueviolet;
+  border-radius: 50%;
+}
+
+.profilePicLg {
+  position: flex;
+  margin-top: -100px;
+  margin-left: 100px;
+  border: solid;
+  height: 150px;
+  width: 150px;
+  border-color: blueviolet;
+  border-radius: 50%;
+}
+
+.profilePic:hover {
+  border-color: rgb(186, 136, 233);
+  cursor: pointer;
+}
+
+.profile-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.row-name {
+  justify-content: space-between;
+}
+
+.side-panel {
+  padding: 15px;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    width: 100%;
+  }
+}
+
+/* hard-coded breakpoints */

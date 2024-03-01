@@ -4,7 +4,7 @@ body {
     
 }
 
-.container {
+.signup-container {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -24,7 +24,7 @@ body {
 }
 
 
-.header {
+.signup-header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,14 +48,14 @@ body {
     align-items: center;
 }
 
-.inputs {
+.signup-inputs {
     margin-top: 55px;
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.input {
+.signup-input {
     display: flex;
     align-items: center;
     margin: auto;

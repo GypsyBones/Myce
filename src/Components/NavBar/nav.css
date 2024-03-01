@@ -16,11 +16,6 @@
   display: flex;
 }
 
-.profilePic {
-  height: 38px;
-  margin-right: 10px;
-}
-
 .bare-image {
   padding-top: 0;
 }
@@ -33,7 +28,6 @@
 .navbar-logo {
   color: #fff;
   justify-self: start;
-  margin-right: 80px;
   cursor: pointer;
   text-decoration: none;
   font-size: 35px;
@@ -47,7 +41,6 @@
   text-align: center;
   width: 70vw;
   justify-content: space-between;
-  margin-right: 2rem;
 }
 
 .nav-item {

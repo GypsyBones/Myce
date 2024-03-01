@@ -3,6 +3,7 @@ import { Button } from './Button.js';
 import Dropdown from './Dropdown.js';
 import './nav.css';
 import { Link } from 'react-router-dom';
+import ProfileComp from '../Profile/profileComp.js';
 
 import Bars from '../../Icons/icons8-menu-squared-50.png';
 import Close from '../../Icons/icons8-close-50.png';
@@ -14,13 +15,14 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 
 import logo from '../../Icons/largeMyceDark.png';
-import profilePic from '../../Icons/icons8-user-default-50.png';
+import defaultUserPic from '../../Icons/icons8-user-default-50.png';
 
-const user = {
-    username: "Jane Doe"
-}
 
 function Navbar () {
+    const id = 1
+    const user = ProfileComp(id)
+
+
     const [click, setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
 
@@ -45,7 +47,7 @@ function Navbar () {
 //TODO Hamburger doesn't show SIGNUP, as well as the Profile dropdown doesn't drop down
     return (
         <>
-            <nav className='navbar'>
+            <Nav className='navbar'>
                 <Link to='/' className='navbar-logo'>
                     MYCE
                 </Link>
@@ -81,9 +83,9 @@ function Navbar () {
                         onMouseLeave={onMouseLeave}
                     >
                         <div className="nav-links username" onClick={closeMobileMenu}>
-                            <img src={profilePic}
-                                className="profilePic" />
-                            {user.username}
+                            <img src={user.avatar || defaultUserPic} 
+                            className="profilePicSm" />
+                            {user.name}
                             <i>{click 
                             ? <img src={Up}
                                 className="bare-image2"  
@@ -97,7 +99,7 @@ function Navbar () {
                     </li>
                 </ul>
                 <Button />
-            </nav>
+            </Nav>
         </>
     );
 }

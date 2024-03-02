@@ -25,11 +25,14 @@
     margin-left: 25px;
 }
 
-.card-body {
+.friends-card-body {
     padding-left: 0px !important;
     padding-right: 0px !important;
     padding-top: 15px;
     padding-bottom: 15px;
+}
+.card-header {
+    padding: 5px !important;
 }
 
 .friends-card {
@@ -40,13 +43,24 @@
     margin-bottom: 15px;;
 }
 
+
 .profile-post-area {
     padding-top: 15px;
 }
 
-.card-header {
-    padding: 5px !important;
+.post-cards {
+    margin-bottom: 45px;
 }
+
+.post-header {
+    align-items: center;
+}
+
+.post-header span {
+    display: flex;
+    font-size: 15px;
+}
+
 
 .profile-stats p {
     list-style: none;

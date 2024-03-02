@@ -21,9 +21,9 @@ const Friends = () => {
     }, []);
 
     return (
-        <div key={`user${user.id}`}>
+        <div>
             {user.length > 0 && user.map((user) => 
-                <Link to={`/profile/${user.id}`}>
+                <Link key={user.id} to={`/profile/${user.id}`}>
                     <img className="profilePicMd profilePic" onClick={goToProfile} key={user.id} src={user.avatar || defaultUserPic} width={100}/>
                 </Link>
             )}

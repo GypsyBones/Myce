@@ -52,7 +52,7 @@ const Profile = () => {
               <Row className="card-row">
                 <Card className="friends-card"> 
                   <Card.Header>Bio:</Card.Header>
-                    <Card.Body>
+                    <Card.Body className="friends-card-body">
                       <p>{user.bio}</p>
                     </Card.Body>
                   </Card>
@@ -60,7 +60,7 @@ const Profile = () => {
               <Row className="card-row">
                 <Card className="friends-card">
                   <Card.Header>Friends:</Card.Header>
-                  <Card.Body>
+                  <Card.Body className="friends-card-body">
                     <Friends />
                   </Card.Body>
                 </Card>

@@ -25,43 +25,128 @@
     margin-left: 25px;
 }
 
+.friends-card {
+    margin-left: 15px;
+    padding: 0px !important;
+}
+
 .friends-card-body {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
     padding-top: 15px;
     padding-bottom: 15px;
 }
-.card-header {
-    padding: 5px !important;
+
+.friends-post-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
 }
 
-.friends-card {
-    margin-left: 15px;
+.friend-profile {
+    margin-bottom: 8px;
+}
+
+.card-header {
+    padding: 5px !important;
+    padding-left: 15px !important;
 }
 
 .card-row {
     margin-bottom: 15px;;
 }
 
-
 .profile-post-area {
     padding-top: 15px;
+}
+
+.trans-btn {
+    background: none;
+    border: none;
+    padding: 0px !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.post-dots {
+    height: 25px;
+    padding: 5px;
 }
 
 .post-cards {
     margin-bottom: 45px;
 }
 
+.new-post-input {
+    font-size: 20px !important;
+}
+
+.new-post-header {
+    margin-bottom: 5px !important;
+}
+
+.new-post-submit-img {
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  margin-left: 13px;
+
+}
+
+.post-interactions {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.super-like {
+    height: 35px;
+    padding: 5px;
+}
+
+.vote {
+    height: 30px;
+    padding: 5px;
+}
+
+.new-post-submit-btn {
+    height: 40px !important;
+    width: 50px !important;
+    padding: 0px !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.post-content {
+    font-size: 16px;
+    font-family: "PT-Serif";
+}
+
 .post-header {
     align-items: center;
 }
 
-.post-header span {
-    display: flex;
-    font-size: 15px;
+.post-username {
+    font-size: 18px !important;
+    text-decoration: none !important;
 }
 
+.post-header span {
+    display: flex;
+}
 
+.timestamp {
+    font-size: 13.5px;
+    color: rgb(59, 59, 59);
+    margin-left: 35px;
+}
 .profile-stats p {
     list-style: none;
     color: #330d42;

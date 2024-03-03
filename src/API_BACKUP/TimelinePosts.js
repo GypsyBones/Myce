@@ -6,7 +6,7 @@
         "timestamp": "",
         "location": "",
         "likes": "",
-        "shares": "", 
+        "superLikes": "", 
         "comments": [
             {
                 "ProfileId": "",
@@ -22,11 +22,11 @@
 const Posts = [
     {
         "content": "Just witnessed the most beautiful sunset at the beach. Nature never ceases to amaze me. 🌅 #sunset #beachlife",
-        "images": ["https://images.unsplash.com/photo-1494548162494-384bba4ab999?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",],
+        "images": ["https://images.unsplash.com/photo-1494548162494-384bba4ab999?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
         "timestamp": "2024-09-01T18:45:00",
         "location": "Beach",
         "likes": 120,
-        "shares": 25,
+        "superLikes": 25,
         "comments": [
             {
                 "ProfileId": "19",
@@ -44,11 +44,11 @@ const Posts = [
     },
     {
         "content": "Spent the day hiking through the forest trails. There's something so rejuvenating about being surrounded by trees and wildlife. 🌲🌿 #nature #hiking",
-        "images": ["https://images.unsplash.com/photo-1700226161339-adee8617fc47?q=80&w=1664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",],
+        "images": ["https://images.unsplash.com/photo-1700226161339-adee8617fc47?q=80&w=1664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
         "timestamp": "2024-09-05T15:20:00",
         "location": "Forest",
         "likes": 90,
-        "shares": 15,
+        "superLikes": 15,
         "comments": [
             {
                 "ProfileId": "23",
@@ -66,11 +66,11 @@ const Posts = [
     },
     {
         "content": "Visited a local farmer's market today and picked up some fresh produce. Supporting local farmers feels so rewarding. 🍎🥕 #farmersmarket #supportlocal",
-        "images": ["https://images.unsplash.com/photo-1526399743290-f73cb4022f48?q=80&w=1664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",],
+        "images": ["https://images.unsplash.com/photo-1526399743290-f73cb4022f48?q=80&w=1664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
         "timestamp": "2024-09-10T11:35:00",
         "location": "Farmers Market",
         "likes": 150,
-        "shares": 30,
+        "superLikes": 30,
         "comments": [
             {
                 "ProfileId": "27",
@@ -88,11 +88,11 @@ const Posts = [
     },
     {
         "content": "Just finished reading an amazing book by the lake. There's something so peaceful about reading surrounded by nature. 📚🌳 #reading #peaceful",
-        "images": ["https://plus.unsplash.com/premium_photo-1664910483856-d226c44351c3?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",],
+        "images": ["https://plus.unsplash.com/premium_photo-1664910483856-d226c44351c3?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
         "timestamp": "2024-09-15T17:10:00",
         "location": "Lake",
         "likes": 80,
-        "shares": 10,
+        "superLikes": 10,
         "comments": [
             {
                 "ProfileId": "30",
@@ -114,7 +114,7 @@ const Posts = [
         "timestamp": "2024-09-20T09:45:00",
         "location": "Beach",
         "likes": 200,
-        "shares": 40,
+        "superLikes": 40,
         "comments": [
             {
                 "ProfileId": "26",
@@ -132,11 +132,11 @@ const Posts = [
     },
     {
         "content": "Just enjoyed a beautiful sunset at the beach! 🌅 #nature #sunset",
-        "images": ["https://images.unsplash.com/photo-1616036740257-9449ea1f6605?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",],
+        "images": ["https://images.unsplash.com/photo-1616036740257-9449ea1f6605?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
         "timestamp": "2024-02-19T18:00:00Z",
         "location": "Beach",
         "likes": 120,
-        "shares": 45,
+        "superLikes": 45,
         "comments": [
             {
                 "ProfileId": "22",
@@ -158,7 +158,7 @@ const Posts = [
         "timestamp": "2024-02-19T12:00:00Z",
         "location": "",
         "likes": 350,
-        "shares": 120,
+        "superLikes": 120,
         "comments": [
             {
                 "ProfileId": "18",
@@ -176,11 +176,11 @@ const Posts = [
     },
     {
         "content": "Visited an amazing art exhibition today! 🎨 #art #inspiration",
-        "images": ["https://images.unsplash.com/photo-1622216107686-dcc90f306dcd?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",],
+        "images": ["https://images.unsplash.com/photo-1622216107686-dcc90f306dcd?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
         "timestamp": "2024-02-19T15:00:00Z",
         "location": "Art Gallery",
         "likes": 200,
-        "shares": 65,
+        "superLikes": 65,
         "comments": [
             {
                 "ProfileId": "14",
@@ -203,22 +203,22 @@ const Posts = [
     },
     {
         "content": "Celebrating my birthday today! 🎉🎂",
-        "images": ["https://plus.unsplash.com/premium_photo-1661741248837-7c065ebf0081?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",],
+        "images": ["https://plus.unsplash.com/premium_photo-1661741248837-7c065ebf0081?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
         "timestamp": "2024-02-19T08:00:00Z",
         "location": "",
         "likes": 500,
-        "shares": 80,
+        "superLikes": 80,
         "comments": [],
         "id": "9",
         "ProfileId": "8"
     },
     {
         "content": "Just finished reading an amazing book! Highly recommend it.",
-        "images": ["https://images.pangobooks.com/images/8507743e-1937-44a2-b5c7-4b4a3d38e9a1?width=800&quality=85&crop=1%3A1",],
+        "images": ["https://images.pangobooks.com/images/8507743e-1937-44a2-b5c7-4b4a3d38e9a1?width=800&quality=85&crop=1%3A1"],
         "timestamp": "2024-02-19T20:00:00Z",
         "location": "",
         "likes": 150,
-        "shares": 30,
+        "superLikes": 30,
         "comments": [
             {
                 "ProfileId": "8",
@@ -239,7 +239,7 @@ const Posts = [
         "timestamp": "2024-02-18T23:00:00Z",
         "location": "Concert Hall",
         "likes": 280,
-        "shares": 50,
+        "superLikes": 50,
         "comments": [
             {
                 "ProfileId": "6",
@@ -261,7 +261,7 @@ const Posts = [
         "timestamp": "2024-02-19T21:00:00Z",
         "location": "",
         "likes": 180,
-        "shares": 20,
+        "superLikes": 20,
         "comments": [
             {
                 "ProfileId": "2",
@@ -278,7 +278,7 @@ const Posts = [
         "timestamp": "2024-02-19T17:00:00Z",
         "location": "Gym",
         "likes": 250,
-        "shares": 40,
+        "superLikes": 40,
         "comments": [
             {
                 "ProfileId": "31",
@@ -295,7 +295,7 @@ const Posts = [
         "timestamp": "2024-02-19T10:00:00Z",
         "location": "Hiking Trail",
         "likes": 300,
-        "shares": 60,
+        "superLikes": 60,
         "comments": [
             {
                 "ProfileId": "18",
@@ -317,7 +317,7 @@ const Posts = [
         "timestamp": "2024-02-19T13:00:00Z",
         "location": "Local Shelter",
         "likes": 400,
-        "shares": 75,
+        "superLikes": 75,
         "comments": [
             {
                 "ProfileId": "14",

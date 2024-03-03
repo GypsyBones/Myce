@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import Debug from '../Debug.js';
+import Debug from '../Other/Debug.js';
 
 function User(id) {
     //const { id: id } = useParams() 
@@ -33,8 +33,8 @@ function User(id) {
     } = user;
     //destructures data to make it accessible to cod
 
-    Debug("profileComp: id", id)
-    Debug("ProfileComp: user", user)
+    //Debug("profileComp: id", id)
+    //Debug("ProfileComp: user", user)
     //debugging user information
 
     return {
@@ -55,40 +55,3 @@ function User(id) {
 };
 
 export default User;
-
-// const API_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Profiles/${props.ProfileID}`;
-
-// const [user, setUser] = useState();
-
-// useEffect(() => {
-//     fetch(API_URL)
-//     .then((res) => res.json())
-//     .then((data) => {
-//         setUser(data);
-//     })
-// }, []);
-
-
-// const {
-//     id,
-//     createdAt, 
-//     name,
-//     avatar,
-//     headerImage,
-//     username,
-//     location,
-//     age,
-// } = user;
-
-// return (
-//     <div>
-//     {id},
-//     {createdAt}, 
-//     {name},
-//     {avatar},
-//     {headerImage},
-//     {username},
-//     {location},
-//     {age}
-//     </div>
-// );

@@ -1,24 +1,23 @@
 import React, { useState } from "react";
+import { Nav, Navbar, Container, NavDropdown, Dropdown } from 'react-bootstrap';
+
 import { Button } from './Button.js';
-import Dropdown from './Dropdown.js';
+import DropdownMenu from './Dropdown.js';
 import './nav.css';
-import { Link } from 'react-router-dom';
 import ProfileComp from '../Profile/profileComp.js';
+import Debug from '../Other/Debug.js';
 
 import Bars from '../../Icons/icons8-menu-squared-50.png';
 import Close from '../../Icons/icons8-close-50.png';
 import Down from '../../Icons/icons8-chevron-down-50.png';
 import Up from '../../Icons/icons8-chevron-up-50.png'
 
-import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Container from 'react-bootstrap/Container';
 
 import logo from '../../Icons/largeMyceDark.png';
 import defaultUserPic from '../../Icons/icons8-user-default-50.png';
 
 
-function Navbar () {
+function Navigation () {
     const id = 1
     const user = ProfileComp(id)
 
@@ -29,28 +28,22 @@ function Navbar () {
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
-    const onMouseEnter = () => {
+    const enterMenu = () => {
         if (window.innerWidth < 960) {
             setDropdown(false)
         } else {
+            Debug("dropdown", "I work")
             setDropdown(true)
         }
-    };
+    }; 
 
-    const onMouseLeave = () => {
-        if (window.innerWidth < 960) {
-            setDropdown(false)
-        } else {
-            setDropdown(false)
-        }
-    };
 //TODO Hamburger doesn't show SIGNUP, as well as the Profile dropdown doesn't drop down
     return (
         <>
-            <Nav className='navbar fixed-top'>
-                <Link to='/' className='navbar-logo'>
+            <Navbar className='navbar fixed-top'>
+                <Nav.Link href='/' className='navbar-logo'>
                     MYCE
-                </Link>
+                </Nav.Link>
                 <div className='menu-icon' onClick={handleClick}>
                     <i> {click 
                             ? <img src={Close}
@@ -63,48 +56,49 @@ function Navbar () {
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className="nav-item">
-                        <Link to='/' className="nav-links" onClick={closeMobileMenu}>Home</Link>
+                        <Nav.Link href='/' className="nav-links" onClick={closeMobileMenu}>Home</Nav.Link>
                     </li>
                     <li className="nav-item">
-                        <Link to='/market' className="nav-links" onClick={closeMobileMenu}>Market</Link>
+                        <Nav.Link id={id} href='/market' className="nav-links" onClick={closeMobileMenu}>Market</Nav.Link>
                     </li>
                     <li className="nav-item">
-                        <Link to='/communities' className="nav-links" onClick={closeMobileMenu}>Communities</Link>
+                        <Nav.Link id={id} href='/communities' className="nav-links" onClick={closeMobileMenu}>Communities</Nav.Link>
                     </li>
                     <li className="nav-item">
-                        <Link to='/jobs' className="nav-links" onClick={closeMobileMenu}>Jobs</Link>
+                        <Nav.Link id={id} href='/jobs' className="nav-links" onClick={closeMobileMenu}>Jobs</Nav.Link>
                     </li>
                     <li className="nav-item">
-                        <Link to='/workshops' className="nav-links" onClick={closeMobileMenu}>Workshops</Link>
+                        <Nav.Link id={id} href='/workshops' className="nav-links" onClick={closeMobileMenu}>Workshops</Nav.Link>
                     </li>
-                    <li 
-                        className="nav-item"
-                        onMouseEnter={onMouseEnter}
-                        onMouseLeave={onMouseLeave}
-                    >
-                        <div className="nav-links username" onClick={closeMobileMenu}>
-                            <img src={user.avatar || defaultUserPic} 
-                            className="profilePicSm" />
-                            {user.name}
-                            <i>{click 
-                            ? <img src={Up}
-                                className="bare-image2"  
-                                alt="close" /> 
-                            : <img src={Down}  
-                                className="bare-image2"
-                                alt="open menu" />
-                            }</i>
-                        </div>
-                        {dropdown && <Dropdown />}
-                    </li>
+                    <Dropdown>
+                        <Dropdown.Toggle
+                        className="nav-item nav-item-dropdown" 
+                        id="collapsible-nav-dropdown"
+                        onMouseOver={()=>{enterMenu()}}>
+                            <span className="nav-username"><img 
+                                src={user.avatar || defaultUserPic} 
+                                className="profilePicSm" />
+                                {user.name}
+                                <i>{click 
+                                    ? <img src={Up}
+                                        className="bare-image2"  
+                                        alt="close" /> 
+                                    : <img src={Down}  
+                                        className="bare-image2"
+                                        alt="open menu" />
+                                    }</i>
+                            </span>
+                        </Dropdown.Toggle>
+                        {dropdown && <DropdownMenu />}
+                    </Dropdown>
                 </ul>
                 <Button />
-            </Nav>
+            </Navbar>
         </>
     );
 }
 
-export default Navbar;
+export default Navigation;
 
 // const Navigation = () => {
 //     return (

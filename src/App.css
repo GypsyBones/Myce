@@ -6,18 +6,22 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "IM Fell DW Pica SC", serif;
   font-weight: 400;
+  font-family: PTSerif;
   font-style: normal;
-  font-size: 25px;
 }
 
-.about, .communities, .createNew, .home, .jobs, .logOut, .market, .settings, .signUp, .workshops {
+.footer {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+.about, .communities, .createNew, .home, .jobs, .logOut, .market, .settings, .signUp, .workshops, .notifications {
   display: flex;
   height: 90vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+  color: #fff;
 }
 
 p {
@@ -47,13 +51,13 @@ hr {
 }
 
 .title2 {
-  font-size: 55px;
+  font-size: 40px;
   margin: 0px;
 }
 .title4 {
-  font-size: 35;
+  font-size: 20px;
   margin: 0;
-  margin-top: -25px;
+  margin-top: -15px;
 }
 .profilePicSm {
   height: 38px;
@@ -76,7 +80,9 @@ hr {
   border-color: blueviolet;
   border-radius: 50%;
 }
-
+.dropdown-toggle::after {
+  display: none !important;
+}
 .profilePicLg {
   position: flex;
   margin-top: -80px;
@@ -117,4 +123,69 @@ hr {
   }
 }
 
-/* hard-coded breakpoints */
+/* Fonts */
+
+@font-face {
+  font-family: 'IMFellCaps';
+  src: url('../public/Fonts/IM_Fell_DW_Pica/IMFellDWPicaSC-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'IMFell';
+  src: url('../public/Fonts/IM_Fell_DW_Pica/IMFellDWPica-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'IMFell';
+  src: url('../public/Fonts/IM_Fell_DW_Pica/IMFellDWPica-Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Nanum';
+  src: url('../public/Fonts/Nanum_Myeongjo/NanumMyeongjo-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight:700 ;
+}
+
+@font-face {
+  font-family: 'Nanum';
+  src: url('../public/Fonts/Nanum_Myeongjo/NanumMyeongjo-ExtraBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('../public/Fonts/PT_Sans/PTSans-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('../public/Fonts/PT_Sans/PTSans-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'PTSerif';
+  src: url('../public/Fonts/PT_Serif/PTSerif-Bold.ttf') format('truetype');
+  font-style: normal;;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'PTSerif';
+  src: url('../public/Fonts/PT_Serif/PTSerif-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* End Fonts */

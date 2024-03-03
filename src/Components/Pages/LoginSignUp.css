@@ -1,19 +1,20 @@
 body {
     background-image: linear-gradient(#2a00b7, #42006c);
-    background-attachment: fixed;
-    
+    background-attachment: fixed; 
 }
 
 .signup-container {
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin-top: 35px;
     text-align: center;
     background: #fff;
-    padding-bottom: 30px;
-    width: 600px;
+    padding-bottom: 25px;
+    width: 500px;
     border-radius: 25px;
     border: 5px solid #797979;
+    height: 550px;
+
 }
 
 .center {
@@ -23,6 +24,13 @@ body {
     transform: translate(-50%, -50%);
 }
 
+.sign-up {
+    display: auto;
+}
+.dark {
+    color: black;
+    font-size: 15px;;
+}
 
 .signup-header {
     display: flex;
@@ -41,28 +49,33 @@ body {
 
 .underline {
     width: 100px;
-    height: 6px;
+    height: 5px;
     background: #3c009D;
     border-radius: 9px;
     display: flex;
     align-items: center;
+    margin-top: -10px;
 }
 
 .signup-inputs {
-    margin-top: 55px;
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
 }
 
 .signup-input {
     display: flex;
     align-items: center;
+    padding-left: 25px;
+    gap: 25px;
     margin: auto;
-    width: 480px;
-    height: 80px;
+    width: 415px;
+    height: 60px;
+    margin-top: 0px;
     background: #eaeaea;
-    border-radius: 6px;
+    border-radius: 10px;
+    font-size: 20px;
 }
 
 .input img {
@@ -95,7 +108,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 220px;
+    width: 180px;
     height: 59px;
     color: #fff;
     background: #4c00b4;
@@ -106,9 +119,14 @@ body {
 }
 
 .submit-container {
-    margin-top: 55px;
+    margin-top: 25px;
     margin-bottom: 35px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    gap: 30px;
+    flex-direction: row;
+}
+
+.gray {
+    background: #EAEAEA;
+    color: #676767;
 }

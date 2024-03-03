@@ -2,7 +2,7 @@ import React from 'react';
 
 const Notifications = props => {
   return (
-    <div className='profile'>
+    <div className='notifications'>
       <h3>Notifications</h3>
     </div>
   );

@@ -2,33 +2,33 @@ import React, { useState } from "react";
 import { MenuItems } from './MenuItem.js';
 import './Dropdown.css';
 import { Link } from 'react-router-dom';
+import { Dropdown } from 'react-bootstrap';
+import Debug from "../Other/Debug.js";
 
 
-function Dropdown() {
+function DropdownMenu() {
     const [click, setClick] = useState(false);
 
     const handleClick = () => setClick(!click);
 
     return (
         <>
-        <ul onClick={handleClick}
-        className={click ? 'dropdown-men clicked' : 'dropdown-menu'}>
-            {MenuItems.map((item, index) => {
-                return(
-                    <li key={index}>
-                        <Link 
-                            className={item.cName} 
-                            to={item.path} 
-                            key={item.key}
-                            onClick={() => setClick(false)}>
-                            {item.title}
-                        </Link>
-                    </li>
-                )
+        <Dropdown.Menu onClick={handleClick}
+            className={click ? 'dropdown-men clicked' : 'dropdown-menu'}>
+                {MenuItems.map((item, index) => {
+                    return(
+                        <Dropdown.Item
+                                className={item.cName} 
+                                href={item.path} 
+                                key={index}
+                                onClick={() => setClick(false)}>
+                                {item.title}
+                        </Dropdown.Item>
+                    )
             })}
-        </ul>
+        </Dropdown.Menu>
         </>
     );
 }
 
-export default Dropdown;
+export default DropdownMenu;

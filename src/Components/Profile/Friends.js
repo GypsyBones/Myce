@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { Card, Row, Carousel, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import defaultUserPic from '../../Icons/icons8-user-default-50.png';
+import dots from '../../Icons/icons8-ellipsis-48.png';
 import { useParams } from "react-router-dom";
 import Debug from "../Other/Debug";
 
@@ -12,9 +13,12 @@ const Friends = (props) => {
     //Math.floor to take it from a string to an integer
     const API_URL = "https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Profiles";
     const [ user, setUser ] = useState([]);
-    const [ profile, setProfile ] = useState([]);
-    const goToProfile = () => setProfile(true);
+    const [ profile, setProfile ] = useState();
 
+    const goToProfile = () => {
+        setProfile();
+    };
+    
     useEffect(() => {
         const fetchItems = () => {
             fetch(API_URL)
@@ -32,10 +36,13 @@ const Friends = (props) => {
                 if (`${user.id}` != id && index <= limitNum) {
                     return (
                         <Link key={user.id} to={`/profile/${user.id}`}>
-                            <img className="friend-profile profilePicMd profilePic" onClick={goToProfile} key={user.id} src={user.avatar || defaultUserPic} width={100}/>
+                            <img className="friend-profile profilePicMd profilePic" alt={user.name} onClick={goToProfile} key={user.id} props={user.id} src={user.avatar || defaultUserPic} width={100}/>
                         </Link>
                     )}
             })}
+            <Link to="/friends">
+                <img className="friend-profile profilePicMd profilePic" alt="All Friends"src={dots} width={100} />
+            </Link>
         </div>
     )
 };

@@ -13,6 +13,7 @@ import LogOut from './Components/Pages/LogOut.js';
 import Settings from './Components/Pages/Settings.js';
 import CreateNew from './Components/Pages/CreateNew.js';
 import Notifications from './Components/Pages/Notifications.js';
+import Friends from './Components/Pages/Friends.js'
 import Footer from './Components/Other/Footer.js';
 
 
@@ -34,6 +35,7 @@ function App() {
         <Route path='/login-sign-up' exact element={<SignUp  props={userId}/>} />
         <Route path='/workshops' exact element={<Workshops  props={userId}/>} />
         <Route path='/notifications' exact element={<Notifications  props={userId}/>} />
+        <Route path='/friends' exact element={<Friends  props={userId}/>} />
       </Routes>
     </Router>
   );

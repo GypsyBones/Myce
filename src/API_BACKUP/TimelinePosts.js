@@ -10,7 +10,7 @@
         "comments": [
             {
                 "ProfileId": "",
-                "Comment": "",
+                "content": "",
                 "timestamp": ""
             },
         ],
@@ -29,13 +29,15 @@ const Posts = [
         "superLikes": 25,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "19",
-                "comment": "Sunsets by the beach are truly magical!",
+                "content": "Sunsets by the beach are truly magical!",
                 "timestamp": "2024-09-01T19:00:00"
             },
             {
+                "id": "2",
                 "ProfileId": "21",
-                "comment": "I love watching the sun dip below the horizon. It's a moment of pure bliss.",
+                "content": "I love watching the sun dip below the horizon. It's a moment of pure bliss.",
                 "timestamp": "2024-09-01T19:30:00"
             }
         ],
@@ -51,13 +53,15 @@ const Posts = [
         "superLikes": 15,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "23",
-                "comment": "I always feel so alive when I'm in the forest. It's like a whole other world.",
+                "content": "I always feel so alive when I'm in the forest. It's like a whole other world.",
                 "timestamp": "2024-09-05T15:45:00"
             },
             {
+                "id": "2",
                 "ProfileId": "25",
-                "comment": "Nature is the best healer. Glad you had a great time!",
+                "content": "Nature is the best healer. Glad you had a great time!",
                 "timestamp": "2024-09-05T16:00:00"
             }
         ],
@@ -73,13 +77,15 @@ const Posts = [
         "superLikes": 30,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "27",
-                "comment": "There's nothing like the taste of fresh, locally grown fruits and vegetables!",
+                "content": "There's nothing like the taste of fresh, locally grown fruits and vegetables!",
                 "timestamp": "2024-09-10T12:00:00"
             },
             {
+                "id": "2",
                 "ProfileId": "29",
-                "comment": "Thank you for supporting us! It means a lot to our community.",
+                "content": "Thank you for supporting us! It means a lot to our community.",
                 "timestamp": "2024-09-10T12:30:00"
             }
         ],
@@ -95,13 +101,15 @@ const Posts = [
         "superLikes": 10,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "30",
-                "comment": "Reading by the lake sounds like a dream!",
+                "content": "Reading by the lake sounds like a dream!",
                 "timestamp": "2024-09-15T17:30:00"
             },
             {
+                "id": "2",
                 "ProfileId": "28",
-                "comment": "Nature provides the perfect backdrop for a good book.",
+                "content": "Nature provides the perfect backdrop for a good book.",
                 "timestamp": "2024-09-15T18:00:00"
             }
         ],
@@ -117,13 +125,15 @@ const Posts = [
         "superLikes": 40,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "26",
-                "comment": "Thank you for your dedication to keeping our beaches clean!",
+                "content": "Thank you for your dedication to keeping our beaches clean!",
                 "timestamp": "2024-09-20T10:00:00"
             },
             {
+                "id": "2",
                 "ProfileId": "24",
-                "comment": "Wish I could've joined! Keep up the great work.",
+                "content": "Wish I could've joined! Keep up the great work.",
                 "timestamp": "2024-09-20T10:30:00"
             }
         ],
@@ -139,13 +149,15 @@ const Posts = [
         "superLikes": 45,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "22",
-                "comment": "Looks stunning!",
+                "content": "Looks stunning!",
                 "timestamp": "2024-02-19T18:15:00Z"
             },
             {
+                "id": "2",
                 "ProfileId": "20",
-                "comment": "Wish I could be there! Coulda brought these chairs I just made!",
+                "content": "Wish I could be there! Coulda brought these chairs I just made!",
                 "timestamp": "2024-02-19T18:30:00Z"
             }
         ],
@@ -161,13 +173,15 @@ const Posts = [
         "superLikes": 120,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "18",
-                "comment": "Great job on the website design!",
+                "content": "Great job on the website design!",
                 "timestamp": "2024-02-19T12:30:00Z"
             },
             {
+                "id": "2",
                 "ProfileId": "16",
-                "comment": "Thanks dad.",
+                "content": "Thanks dad.",
                 "timestamp": "2024-02-19T12:38:00Z"
             }
         ],
@@ -183,18 +197,21 @@ const Posts = [
         "superLikes": 65,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "14",
-                "comment": "Which artist's work did you see?",
+                "content": "Which artist's work did you see?",
                 "timestamp": "2024-02-19T15:30:00Z"
             },
             {
+                "id": "2",
                 "ProfileId": "12",
-                "comment": "Looks like a fantastic exhibit!",
+                "content": "Looks like a fantastic exhibit!",
                 "timestamp": "2024-02-19T15:45:00Z"
             },
             {
+                "id": "3",
                 "ProfileId": "10",
-                "comment": "Wish I could have joined you!",
+                "content": "Wish I could have joined you!",
                 "timestamp": "2024-02-19T16:00:00Z"
             }
         ],
@@ -221,8 +238,9 @@ const Posts = [
         "superLikes": 30,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "8",
-                "comment": "What book was it?",
+                "content": "What book was it?",
                 "timestamp": "2024-02-19T20:15:00Z"
             }
         ],
@@ -242,13 +260,15 @@ const Posts = [
         "superLikes": 50,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "6",
-                "comment": "Who was performing?",
+                "content": "Who was performing?",
                 "timestamp": "2024-02-19T00:15:00Z"
             },
             {
+                "id": "2",
                 "ProfileId": "4",
-                "comment": "Looks like it was a blast!",
+                "content": "Looks like it was a blast!",
                 "timestamp": "2024-02-19T01:00:00Z"
             }
         ],
@@ -264,8 +284,9 @@ const Posts = [
         "superLikes": 20,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "2",
-                "comment": "Sounds like a perfect evening!",
+                "content": "Sounds like a perfect evening!",
                 "timestamp": "2024-02-19T21:30:00Z"
             }
         ],
@@ -281,8 +302,9 @@ const Posts = [
         "superLikes": 40,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "31",
-                "comment": "Keep up the good work!",
+                "content": "Keep up the good work!",
                 "timestamp": "2024-02-19T17:30:00Z"
             }
         ],
@@ -298,13 +320,15 @@ const Posts = [
         "superLikes": 60,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "18",
-                "comment": "Which trail are you on?",
+                "content": "Which trail are you on?",
                 "timestamp": "2024-02-19T10:30:00Z"
             },
             {
+                "id": "2",
                 "ProfileId": "16",
-                "comment": "Looks like a beautiful day for a hike!",
+                "content": "Looks like a beautiful day for a hike!",
                 "timestamp": "2024-02-19T11:00:00Z"
             }
         ],
@@ -320,18 +344,21 @@ const Posts = [
         "superLikes": 75,
         "comments": [
             {
+                "id": "1",
                 "ProfileId": "14",
-                "comment": "What an adorable helper!",
+                "content": "What an adorable helper!",
                 "timestamp": "2024-02-19T13:30:00Z"
             },
             {
+                "id": "2",
                 "ProfileId": "33",
-                "comment": "You're making a difference!",
+                "content": "You're making a difference!",
                 "timestamp": "2024-02-19T14:00:00Z"
             },
             {
+                "id": "3",
                 "ProfileId": "17",
-                "comment": "So proud of you!",
+                "content": "So proud of you!",
                 "timestamp": "2024-02-19T14:30:00Z"
             }
         ], 

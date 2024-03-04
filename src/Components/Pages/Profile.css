@@ -1,5 +1,8 @@
+hr {
+    margin: 15px !important;
+    padding-bottom: 25px;
+  }
 
- 
 .headerImg {
     padding-left: 0px !important;
     padding-right: 0px !important;
@@ -142,11 +145,45 @@
     display: flex;
 }
 
+.hr-comment {
+    padding-bottom: 0px;
+}
+
 .timestamp {
     font-size: 13.5px;
     color: rgb(59, 59, 59);
     margin-left: 35px;
 }
+
+.comments-container {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+}
+
+.comment-header {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    height: 45px;
+    background-color: rgb(199, 199, 199);
+}
+
+.no-pad {
+    padding: 0px !important;
+}
+
+.new-comment {
+    padding-bottom: 15px;
+}
+
+.comment-content {
+    text-align: start;
+    padding-top: 5px;
+    margin: 15px;
+}
+
 .profile-stats p {
     list-style: none;
     color: #330d42;

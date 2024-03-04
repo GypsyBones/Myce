@@ -15,7 +15,7 @@
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
-.about, .communities, .createNew, .home, .jobs, .logOut, .market, .settings, .signUp, .workshops, .notifications {
+.about, .communities, .createNew, .home, .jobs, .logOut, .market, .settings, .signUp, .workshops, .notifications, .friends {
   display: flex;
   height: 90vh;
   align-items: center;

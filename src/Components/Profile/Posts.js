@@ -8,6 +8,7 @@ import '../Pages/Profile.css';
 import ProfileComp from './profileComp.js';
 import Debug from '../Other/Debug.js';
 import TimeStamp from '../Other/TimeStamp.js';
+import Comments from './Comments.js'
 
 import dots from '../../Icons/icons8-dots-50.png';
 import star from '../../Icons/icons8-army-star-50.png';
@@ -19,13 +20,14 @@ import down from '../../Icons/icons8-chevron-down-50.png';
 const ProfilePosts = (props) => {
     const POSTS_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Posts`
     const [ posts, setPosts ] = useState([]);
-        useEffect(() => {
-            fetch(POSTS_URL)
-            .then((res) => res.json())
-            .then((data) => {
-                setPosts(data);
-            })
-        }, []);
+
+    useEffect(() => {
+        fetch(POSTS_URL)
+        .then((res) => res.json())
+        .then((data) => {
+            setPosts(data);
+        })
+    }, []);
     
 
     let UserId = props.props;
@@ -100,17 +102,8 @@ const ProfilePosts = (props) => {
                             </Col>
                         </Row>
                         <Row className="comments-container">
-                            <Col>
-                                <Row>
-                                </Row>
-                                <Row>
-                                </Row>
-                                <Row>
-                                </Row>
-                            </Col>
+                            <Comments props={{limit:"2", post:{post}}}/>
                         </Row>
-                        
-                        
                     </Card>
                 )
             };

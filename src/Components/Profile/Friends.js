@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from "react";
-import { Card, Row, Carousel, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import defaultUserPic from '../../Icons/icons8-user-default-50.png';
 import dots from '../../Icons/icons8-ellipsis-48.png';
@@ -7,13 +6,15 @@ import { useParams } from "react-router-dom";
 import Debug from "../Other/Debug";
 
 const Friends = (props) => {
-    const { id: id } = useParams();
+    const { id } = useParams();
     //used to remove the profile's info from the friends list
     let limitNum = Math.floor(props.props);
     //Math.floor to take it from a string to an integer
     const API_URL = "https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Profiles";
     const [ user, setUser ] = useState([]);
     const [ profile, setProfile ] = useState();
+    
+    Debug("Friends", id)
 
     const goToProfile = () => {
         setProfile();
@@ -33,12 +34,16 @@ const Friends = (props) => {
     return (
         <div className="friends-post-content">
             {user.length > 0 && user.map((user, index) => {
-                if (`${user.id}` != id && index <= limitNum) {
+                if (`${user.id}` !== id && index <= limitNum) {
                     return (
                         <Link key={user.id} to={`/profile/${user.id}`}>
                             <img className="friend-profile profilePicMd profilePic" alt={user.name} onClick={goToProfile} key={user.id} props={user.id} src={user.avatar || defaultUserPic} width={100}/>
                         </Link>
-                    )}
+                    )} else {
+                        return (
+                            <div key={user.id}></div>
+                        )
+                    }
             })}
             <Link to="/friends">
                 <img className="friend-profile profilePicMd profilePic" alt="All Friends"src={dots} width={100} />

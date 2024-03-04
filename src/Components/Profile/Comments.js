@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Container, Col, Row, Card, Form, Button, Input } from 'react-bootstrap';
+//import { useState } from 'react';
+import { Col, Row, Form, Button } from 'react-bootstrap';
 import profileComp from './profileComp';
 import TimeStamp from '../Other/TimeStamp.js';
 import Debug from '../Other/Debug';
@@ -15,15 +15,15 @@ function CommentsList(props) {
     const comments = Post.comments
 
     Debug("Comments:props", Post.id)
-    const API_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Posts/${Post.id}`;
+    //const API_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Posts/${Post.id}`;
     
     //const [comments, setComments] = useState([]);
-    const [updateComments, setUpdateComments] = useState(false);
-    const [newComment, setNewComment] = useState({
-        timestamp: "",
-        content: "",
-        ProfileId: ""
-    });
+    //const [updateComments, setUpdateComments] = useState(false);
+    //const [newComment, setNewComment] = useState({
+    //    timestamp: "",
+    //    content: "",
+    //    ProfileId: ""
+    //});
     //a single comment to be added
     
     // const currentDate = newDate();
@@ -141,7 +141,7 @@ function CommentsList(props) {
                 <div key={`${Post.id}:${id}`}>
                     <Row className="comment-header">
                         <Col className='no-pad' md="2">
-                            <img className="profilePicSm" src={profile.avatar || defaultUserPic} />
+                            <img className="profilePicSm" src={profile.avatar || defaultUserPic} alt={`profile${user.name}`}/>
                         </Col>
                         <Col className='no-pad' md="5">
                             <p>{profile.username}</p>
@@ -150,11 +150,11 @@ function CommentsList(props) {
                             <span className="timestamp">{TimeStamp(timestamp)}</span>
                         </Col>
                         <Col className='no-pad' md="1">
-                            <button className="trans-btn"><img className="post-dots" src={dots}/></button>
+                            <button className="trans-btn"><img className="post-dots" src={dots} alt="menu dots"/></button>
                         </Col>
                     </Row>
                     <Row>
-                        <p className='comment-content'>{comment.content}</p>
+                        <p className='comment-content'>{content}</p>
                     </Row>
                     <Row>
                         <span>
@@ -163,11 +163,15 @@ function CommentsList(props) {
                     </Row>
                     <br/>
                 </div>
-                )}
+                )} else {
+                    return (
+                        <div></div>
+                    )
+                }
             })}
             <Row className="post-header new-post-header new-comment">
                 <Col md="1">
-                    <img className="profilePicSm" src={user.avatar} />
+                    <img className="profilePicSm" src={user.avatar} alt={`profile${user.name}`}/>
                 </Col>
                 <Col md="9">
                     <Form>
@@ -186,7 +190,7 @@ function CommentsList(props) {
                         className="new-post-submit-btn trans-btn" 
                         type="submit"
                         /*onClick={(e) => handleSubmit(e)}*/>
-                            <img className="new-post-submit-img" src={submit}/>
+                            <img className="new-post-submit-img" src={submit} alt="submit"/>
                     </Button>
                 </Col>
             </Row>

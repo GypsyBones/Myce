@@ -5,7 +5,7 @@ import './Profile.css'
 import Debug from "../Other/Debug.js";
 
 
-import ProfileComp from '../Profile/profileComp.js';
+import profileComp from '../Profile/profileComp.js';
 import Friends from '../Profile/Friends.js';
 import ProfileFeed from '../Profile/ProfileFeed.js'
 
@@ -15,10 +15,21 @@ import submit from '../../Icons/icons8-right-button-50.png';
 
 
 const Profile = (props) => {
-  const { id: browserId } = useParams();
-  const profile = ProfileComp(browserId);
-  const userId = props.props
-  console.log(userId, browserId)
+  const { id: id } = useParams();
+  const userId = Math.floor(id)
+  let profile = profileComp(userId)
+  console.log(userId)
+  let myId = props
+
+  // useEffect(() => {
+  //   const changeProfile = () => {
+  //     setProfile(user)
+  //   }; 
+  //   changeProfile();
+  //   Debug("profile:setProfile", profile)
+  // }, [])
+
+
 //id differentiation between browser and props for post creation ability only on own profile page
   //var friendId = "";
   //let [profile, setProfile] = useState(friendId);
@@ -41,7 +52,7 @@ const Profile = (props) => {
         </Col>
         <Col md="4" className="profileName">
           <p className="title2">{profile.name}</p>
-          <p className="title4">{profile.profilename}</p>
+          <p className="title4">{profile.username}</p>
         </Col>
         <Col className="profile-stats">
           <Row className="profile-stats-row">
@@ -76,7 +87,7 @@ const Profile = (props) => {
                 <Card className="friends-card">
                   <Card.Header className="post-profilename">Friends:</Card.Header>
                   <Card.Body className="friends-card-body">
-                    <Friends props="15" />
+                    <Friends profile={profile} />
                   </Card.Body>
                 </Card>
               </Row>
@@ -84,7 +95,7 @@ const Profile = (props) => {
           </Row>
         </Col>
         <Col  md="6" className="profile-post-area">
-          <ProfileFeed props={userId}/>
+          <ProfileFeed profile={profile} id={myId}/>
         </Col>
         <Col xs="3" className="right-side-panel">
         </Col>

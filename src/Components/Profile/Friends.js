@@ -1,25 +1,22 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { Button } from 'react-bootstrap';
+
+import Debug from "../Other/Debug";
+import ProfileComp from '../Profile/profileComp.js';
+
 import defaultUserPic from '../../Icons/icons8-user-default-50.png';
 import dots from '../../Icons/icons8-ellipsis-48.png';
-import { useParams } from "react-router-dom";
-import Debug from "../Other/Debug";
 
-const Friends = (props) => {
-    const { id } = useParams();
-    //used to remove the profile's info from the friends list
-    let limitNum = Math.floor(props.props);
-    //Math.floor to take it from a string to an integer
+const Friends = ( props ) => {
+    const profile = props.profile
+    console.log(profile)   
+    
+    let limitNum = 15;
     const API_URL = "https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Profiles";
     const [ user, setUser ] = useState([]);
-    const [ profile, setProfile ] = useState();
-    
-    Debug("Friends", id)
 
-    const goToProfile = () => {
-        setProfile();
-    };
-    
     useEffect(() => {
         const fetchItems = () => {
             fetch(API_URL)
@@ -27,18 +24,25 @@ const Friends = (props) => {
             .then((data) => {
                 setUser(data); 
          })};
-//TODO when click on friend link, refreshes page contents with new content
         fetchItems();
     }, []);
+    //accesses all profiles for mapping below
 
     return (
         <div className="friends-post-content">
             {user.length > 0 && user.map((user, index) => {
-                if (`${user.id}` !== id && index <= limitNum) {
+                if (Math.floor(`${user.id}`) !== profile.id && index <= limitNum) {
                     return (
-                        <Link key={user.id} to={`/profile/${user.id}`}>
-                            <img className="friend-profile profilePicMd profilePic" alt={user.name} onClick={goToProfile} key={user.id} props={user.id} src={user.avatar || defaultUserPic} width={100}/>
-                        </Link>
+                        <Button href={`./${user.id}`} className="trans-btn" key={user.id} >
+                            <img 
+                                className="friend-profile profilePicMd profilePic" 
+                                alt={user.id} 
+                                key={user.id} 
+                                props={user.id} 
+                                src={user.avatar || defaultUserPic} 
+                                width={100} 
+                                />
+                        </Button>
                     )} else {
                         return (
                             <div key={user.id}></div>

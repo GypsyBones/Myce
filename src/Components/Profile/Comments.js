@@ -1,5 +1,7 @@
 //import { useState } from 'react';
 import { Col, Row, Form, Button } from 'react-bootstrap';
+import { React, useState, useEffect } from "react";
+
 import profileComp from './profileComp';
 import TimeStamp from '../Other/TimeStamp.js';
 import Debug from '../Other/Debug';
@@ -8,16 +10,23 @@ import dots from '../../Icons/icons8-dots-50.png';
 import submit from '../../Icons/icons8-right-button-50.png';
 
 
-function CommentsList(props) { 
-    const limitNum = Math.floor(props.props.limit);
+function Comments(props) { 
+    const limitNum = 2;
     const Post = props.props.post.post;
     const user = profileComp(Post.ProfileId);
     const comments = Post.comments
 
-    Debug("Comments:props", Post.id)
     //const API_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Posts/${Post.id}`;
     
-    //const [comments, setComments] = useState([]);
+    // const [comments, setComments] = useState([]);
+
+
+    // useEffect(() => {
+    //     const fetchComments = () => {
+    //         setComments(Post.comments)
+    //     };
+    //     fetchComments();
+    // }, []);
     //const [updateComments, setUpdateComments] = useState(false);
     //const [newComment, setNewComment] = useState({
     //    timestamp: "",
@@ -134,14 +143,15 @@ function CommentsList(props) {
                     timestamp
                 } = comment;
                 const profile = profileComp(ProfileId)
-                Debug("comments.length", profile)
 
                 if (index <= limitNum) {
                 return(
                 <div key={`${Post.id}:${id}`}>
                     <Row className="comment-header">
                         <Col className='no-pad' md="2">
-                            <img className="profilePicSm" src={profile.avatar || defaultUserPic} alt={`profile${user.name}`}/>
+                            <Button href={`./${profile.id}`} className="trans-btn">
+                                <img className="profilePicSm" src={profile.avatar || defaultUserPic} alt={`profile${profile.name}`}/>
+                            </Button>
                         </Col>
                         <Col className='no-pad' md="5">
                             <p>{profile.username}</p>
@@ -198,4 +208,4 @@ function CommentsList(props) {
   );
 }
 
-export default CommentsList;
+export default Comments;

@@ -1,7 +1,7 @@
-import { React, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Debug from '../Other/Debug.js';
 
-function User(id) {
+function ProfileComp(id) {
     //const { id: id } = useParams() 
     //takes id from browser and attributes it to the variable
     const API_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Profiles/${id}`; 
@@ -31,7 +31,7 @@ function User(id) {
         verified, 
         posts
     } = user;
-    //destructures data to make it accessible to cod
+    //destructures data to make it accessible to code
 
     //Debug("profileComp: id", id)
     //Debug("ProfileComp: user", user)
@@ -54,4 +54,4 @@ function User(id) {
     }
 };
 
-export default User;
+export default ProfileComp;

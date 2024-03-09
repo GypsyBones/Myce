@@ -5,7 +5,6 @@ import { Link, useParams } from "react-router-dom";
 import '../Pages/Profile.css';
 
 import ProfileComp from './profileComp.js';
-import Debug from '../Other/Debug.js';
 import TimeStamp from '../Other/TimeStamp.js';
 import Comments from './Comments.js'
 
@@ -19,18 +18,23 @@ import defaultUserPic from '../../Icons/icons8-user-default-50.png';
 import submit from '../../Icons/icons8-right-button-50.png';
 
 
-
 const Posts = ({ posts, id, getPosts }) => {
+    //passing through the posts, an id, and a getPosts function that sets the state of the page's posts
     const POSTS_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Posts`
     let { id: UserId } = useParams();
     let user = ProfileComp(UserId); 
     let myId = Math.floor(id);
 
     const [open, setOpen] = useState(false);
+    //sets state fpr editing input field
     const [updatedPostId, setUpdatedPostId] = useState("");
-    const [updatedContent, setUpdatedContent] = useState("")
-    console.log("Posts:content", updatedContent)
+    // sets state for PostId to be accessible for discerning which post the editing input field opens for
+    const [updatedContent, setUpdatedContent] = useState("");
+    //sets the state with the updated content,to be accessible for the UpdatePost function, and for filling the 
+    //input field automatically upon opening
+    console.log("Posts:content", updatedContent);
     
+
     const handleOpen = (post) => {
         console.log(post);
         setUpdatedPostId(post.id);
@@ -38,12 +42,11 @@ const Posts = ({ posts, id, getPosts }) => {
         setOpen(!open);
         console.log("OPEN IS NOW: ", open, updatedPostId);
     };
-    
+    //this handles the open state, updates the postId, and updates the content
 
     const updatePost = (e, post, id) => {
         e.preventDefault()
         console.log('updatePost has been clicked', post)
-        console.log(post)
   
         let updatedPost = {
           ...post, 
@@ -57,19 +60,15 @@ const Posts = ({ posts, id, getPosts }) => {
         .then(setOpen(!open))
         .then(getPosts);
     }
-
+    //a typical fetch update CRUD that ends with triggering the Open state and 
+    //triggering the getPosts function that is passed through props
 
     const deletePost = (id) => {
         console.log('DeletePost is getting triggered')
       fetch(`${POSTS_URL}/${id}`, {
         method: 'DELETE'
-      }).then(() => getPosts())
+      }).then(getPosts)
     }
-  
-
-    //Debug("Posts: userId", UserId)
-    //Debug("Posts.js: Posts Length", POSTS_URL.length)
-  
 
     return (
         <Container>
@@ -84,8 +83,9 @@ const Posts = ({ posts, id, getPosts }) => {
                     comments,
                     ProfileId 
                 } = post; 
-
+                //destructuring the post from posts ahead of the return while mapping the posts array
                 if (ProfileId === UserId) {
+                    //checking to see if the id of the author of the post is the same as the profile that called it
                     return (
                     <Card className="post-cards" key={`${user.id}${id}`} post={post}>
                         <Card.Header>
@@ -115,6 +115,7 @@ const Posts = ({ posts, id, getPosts }) => {
                         </Card.Header>
                         <Card.Body className="post-card-body">
                             {open === true && updatedPostId === id ?
+                            //checking the setState of open and making sure only the post that is being edited opens it's editing input field
                             <Row>
                                 <Form>
                                     <Form.Group className="col md-10">
@@ -171,17 +172,5 @@ const Posts = ({ posts, id, getPosts }) => {
         })}
         </Container> 
     )} 
-
-
-
-// TODO profiles.length, for each profile, take the id and place it in API_URL, and GET data to make a Post
-//use Users hook to get profile info for posts (less code) 
-    
-    
-    //setup: if an id is passed, map through all posts attached to id
-//if there is not an id passed, all available posts from all users are mapped
-    //console.log(post)
-    //console.log({ProfileId})
-    //let avatarSrc = `${PROFILE_URL}${ProfileId}.avatar`;
 
 export default Posts;

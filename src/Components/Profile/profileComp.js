@@ -15,7 +15,7 @@ function ProfileComp(id) {
         })
     }, []);
     //sets the data from the api as the user
-
+    
     const { 
         username,
         name, 
@@ -31,10 +31,6 @@ function ProfileComp(id) {
         posts
     } = user;
     //destructures data to make it accessible to code
-
-    //Debug("profileComp: id", id)
-    //Debug("ProfileComp: user", user)
-    //debugging user information
 
     return {
         id,

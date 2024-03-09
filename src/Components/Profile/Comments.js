@@ -4,7 +4,6 @@ import { React, } from "react";
 
 import profileComp from './profileComp';
 import TimeStamp from '../Other/TimeStamp.js';
-//import Debug from '../Other/Debug';
 import defaultUserPic from '../../Icons/icons8-user-default-50.png';
 import dots from '../../Icons/icons8-dots-50.png';
 import submit from '../../Icons/icons8-right-button-50.png';
@@ -15,6 +14,10 @@ function Comments(props) {
     const myId = Math.floor(props.id);
     const user = profileComp(myId);
     const comments = props.post.comments
+    //limitNum is a prop that sets the limit of how many comments are visible, and is dymnamic for future use
+    //when I decide to have macro view, which allow syou to see all the information on the post
+
+
     return (
         <div className="comments"> 
             <hr className="hr-comment"/>
@@ -26,7 +29,8 @@ function Comments(props) {
                     timestamp
                 } = comment;
                 const profile = profileComp(ProfileId)
-
+                //maps through the array of comments, pulls the id of the profile out and passes it through 
+                //the profile component that returns the profile data in the variable 'profile'.
                 if (index <= limitNum) {
                 return(
                 <div key={`${props.id}:${id}`}>
@@ -72,7 +76,6 @@ function Comments(props) {
                             <Form.Control 
                                 className="new-post-input" 
                                 type="text" 
-                               /*onChange={(e) => setNewContent(e.target.value)}*/
                                 placeholder="Comment">
                             </Form.Control>
                         </Form.Group>
@@ -81,8 +84,7 @@ function Comments(props) {
                 <Col md="2">
                     <Button 
                         className="new-post-submit-btn trans-btn" 
-                        type="submit"
-                        /*onClick={(e) => handleSubmit(e)}*/>
+                        type="submit">
                             <img className="new-post-submit-img" src={submit} alt="submit"/>
                     </Button>
                 </Col>

@@ -1,6 +1,5 @@
 import { React } from 'react';
-import { useParams } from "react-router-dom";
-import { Container, Col, Row, Card } from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 import HomeFeed from '../Profile/HomeFeed.js';
 import ProfileComp from '../Profile/profileComp.js';
 

@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { Col, Row, Card, Form, Button } from 'react-bootstrap';
 
 
@@ -19,13 +18,16 @@ const HomeFeed = (props) => {
   const POSTS_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Posts`
   
   const [ posts, setPosts ] = useState([]);
+    //sets the state of the posts when the getPosts function is called
 
   const [updatePosts, setUpdatePosts] = useState(false);
   const [content, setContent] = useState("");
+    // content is set for accessibility from the editing input field and from fetch data
 
   const handleContent = (e) => {
     setContent(e.target.value);
   };
+    //a function that takes the event and sets the content state with it's value
 
   const getPosts = () => {
     fetch(POSTS_URL)
@@ -34,6 +36,7 @@ const HomeFeed = (props) => {
     .then(setUpdatePosts(false))
     .then(console.log("getPosts triggered"))
   }
+  //displays the array of posts
 
   useEffect(() => {
     getPosts()
@@ -61,6 +64,8 @@ const HomeFeed = (props) => {
     })
     }).then(() => getPosts())
     .then(setContent(""))}
+    //submission of new post: creates variables for reference, posts the data through fetch, 
+    //triggers getPost function, then sets the content back to an empty string
 
     return (
         <Row>

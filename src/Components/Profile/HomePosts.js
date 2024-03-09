@@ -1,11 +1,10 @@
 import { React, useState } from "react";
 import { Card, Row, Container, Col, Button, Dropdown,  DropdownButton, Form } from 'react-bootstrap';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import '../Pages/Profile.css';
 
 import ProfileComp from './profileComp.js';
-import Debug from '../Other/Debug.js';
 import TimeStamp from '../Other/TimeStamp.js';
 import Comments from './Comments.js'
 
@@ -21,16 +20,22 @@ import submit from '../../Icons/icons8-right-button-50.png';
 
 
 const Posts = ( props ) => {
+    //Homeposts is similar to posts, but it differs 
     const POSTS_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Posts`
     let posts = props.posts
     let myId = Math.floor(props.id);
     let user = ProfileComp(myId);
+    //the user is gained through the props rather than the browser
 
     console.log("Post.js:prop + myId:", myId, props);
 
     const [open, setOpen] = useState(false);
+    //sets the open state for editing posts
     const [updatedPostId, setUpdatedPostId] = useState("");
+    // sets state for PostId to be accessible for discerning which post the editing input field opens for
     const [updatedContent, setUpdatedContent] = useState("")
+    //sets the state with the updated content,to be accessible for the UpdatePost function, and for filling the 
+    //input field automatically upon opening
     console.log("Posts:content", updatedContent)
     
     const handleOpen = (post) => {
@@ -40,12 +45,11 @@ const Posts = ( props ) => {
         setOpen(!open);
         console.log("OPEN IS NOW: ", open, updatedPostId);
     };
-    
+    //this handles the open state, updates the postId, and updates the content
 
     const updatePost = (e, post, id) => {
         e.preventDefault()
         console.log('updatePost has been clicked', post)
-        console.log(post)
   
         let updatedPost = {
           ...post, 
@@ -59,6 +63,8 @@ const Posts = ( props ) => {
         .then(setOpen(!open))
         .then(props.getPosts);
     }
+    //a typical fetch update CRUD that ends with triggering the Open state and 
+    //triggering the getPosts function that is passed through props
 
 
     const deletePost = (id) => {
@@ -68,11 +74,6 @@ const Posts = ( props ) => {
       }).then(() => props.getPosts())
     }
   
-
-    //Debug("Posts: userId", UserId)
-    //Debug("Posts.js: Posts Length", POSTS_URL.length)
-  
-
     return (
         <Container>
             {posts.length > 0 && posts.map((post, ProfileId) => {
@@ -85,6 +86,12 @@ const Posts = ( props ) => {
                     superLikes,
                     comments,
                 } = post; 
+                //this is where the issue comes in for this project, one that I couldn't configure in time
+                //the data is destructured here, which means the profileId is only accessible here
+                //I SHOULD be able to profileComp this to get the profile data returned and use that for the 
+                //various information bits below, however, it causes too many renders and shuts the page down
+                //which is ironic because that is exactly how the comments are done
+                //so, while technically incorrect, it still 'works' and is fine for now
                 console.log(ProfileId)
                 return (
                     <Card className="post-cards" key={`${user.id}${id}`} post={post}>
@@ -170,17 +177,5 @@ const Posts = ( props ) => {
         })}
         </Container> 
     )} 
-
-
-
-// TODO profiles.length, for each profile, take the id and place it in API_URL, and GET data to make a Post
-//use Users hook to get profile info for posts (less code) 
-    
-    
-    //setup: if an id is passed, map through all posts attached to id
-//if there is not an id passed, all available posts from all users are mapped
-    //console.log(post)
-    //console.log({ProfileId})
-    //let avatarSrc = `${PROFILE_URL}${ProfileId}.avatar`;
 
 export default Posts;

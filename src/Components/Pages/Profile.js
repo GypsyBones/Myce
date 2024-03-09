@@ -17,6 +17,9 @@ const Profile = (props) => {
   let profile = profileComp(userId)
   console.log(userId)
   let myId = props
+  // determines different variables, useParams gets the id from the browser and turns it to a whole integer
+  //to be passed through my profile component that returns the values of the profile and sets it as 'profile
+  //myId is the id of the user, the one in navigation pane
 
   return (
     <Container fluid="lg" className="container">
@@ -84,19 +87,3 @@ const Profile = (props) => {
 };
 
 export default Profile;
-
-//change = {handleProfile(friendId)}
-
-// <Row>
-// <Col>
-//   <Button type="add-a-picture"> + Photo</Button>
-// </Col>
-// <Col>
-//   <Button type="submit">Submit</Button>
-// </Col>
-
-// </Row>
-
-// {posts.length > 0 && posts.map((post) => 
-//   <Post key={post.id} post={post} />
-//   )}

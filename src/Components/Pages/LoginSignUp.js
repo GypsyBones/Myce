@@ -7,9 +7,9 @@ import './LoginSignUp.css';
 import user_icon from '../../Icons/icons8-user-default-50.png';
 import email_icon from '../../Icons/icons8-email-50.png';
 import password_icon from '../../Icons/icons8-key-50.png';
-import Debug from '../Other/Debug';
 
-const SignUp = props => {
+const SignUp = () => {
+    //TODO this page is quite unfinished still
     const [action, setAction] = useState("Sign Up");
     //changes the header and determines which form inputs are available
     const initialValues = {username: "", email: "", password: ""};
@@ -70,6 +70,7 @@ const SignUp = props => {
             errors.password = "This is an incorrect password";
         }
         return errors;
+        //an error run to double check input fields
     };
 
   return (

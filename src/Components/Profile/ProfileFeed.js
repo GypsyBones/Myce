@@ -13,17 +13,21 @@ import defaultUserPic from '../../Icons/icons8-user-default-50.png';
 
 const ProfileFeed = (props) => {
   const { id } = useParams();
+  //get the id data from the browser
   const browserId = Math.floor(id)
+  //turns that id into a whole integer
   const user = ProfileComp(browserId);
+  //passes the integer id through to profile component that returns profile data
   let myId = Math.floor(props.id.props)
+  //THE user id turned to a whole integer
   console.log("profilefeed:", myId)
   const POSTS_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Posts`
   
   const [ posts, setPosts ] = useState([]);
-
+  // sets the state of the array of posts
   const [updatePosts, setUpdatePosts] = useState(false);
   const [content, setContent] = useState("")
-
+  //set content triggered by editing
   const handleContent = (e) => {
     setContent(e.target.value);
   };
@@ -62,6 +66,8 @@ const ProfileFeed = (props) => {
     })
     }).then(() => getPosts())
     .then(setContent(""))}
+    //submission of new post: creates variables for reference, posts the data through fetch, 
+    //triggers getPost function, then sets the content back to an empty string
 
     return (
         <Row>
@@ -105,32 +111,3 @@ const ProfileFeed = (props) => {
 };
 
 export default ProfileFeed;
-
-
-// async function postJSON(data) {
-//   const d = newDate();
-//   const date = d.toISOString()
-
-//   fetch(POSTS_URL, {
-//       method: "POST",
-//       body: JSON.stringify({
-//           "content": "",
-//           "images": [""],
-//           "timestamp": date,
-//           "location": user.location,
-//           "likes": 0,
-//           "superLikes": 0, 
-//           "comments": [
-//               {},
-//           ],
-//           "ProfileId": user.id
-//       }),
-//       headers: {
-//           "Content-type": "application/json; charset=UTF-8"
-//       }
-//   })
-//   .then((res) => res.json())
-//   .then((data) => {
-//       setPosts(data);
-//   })
-// }

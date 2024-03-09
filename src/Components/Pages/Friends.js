@@ -9,8 +9,11 @@ const Friends = (props) => {
   const profile = ProfileComp(myId)
 
   console.log("friends", props)
+  //this page just has a generic card that fits all the friends' profiles on it
+  //TODO allow for the parameters to change when clicked from a different profile
+  //maybe do that from the Routing in app.js
+  
     return (
-
       <Container fluid="lg" className="container">
         <Row className="header show-grid">
             <img className="headerImg" src={profile.header} />

@@ -1,19 +1,14 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import { Button } from 'react-bootstrap';
-
-import Debug from "../Other/Debug";
-import ProfileComp from '../Profile/profileComp.js';
 
 import defaultUserPic from '../../Icons/icons8-user-default-50.png';
 import dots from '../../Icons/icons8-ellipsis-48.png';
 
-const Friends = ( props ) => {
+const FriendsList = ( props ) => {
     const profile = props.profile
-    console.log(profile)   
-    
-    let limitNum = 15;
+
+    let limitNum = Math.floor(props.limit);
     const API_URL = "https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Profiles";
     const [ user, setUser ] = useState([]);
 
@@ -33,9 +28,9 @@ const Friends = ( props ) => {
             {user.length > 0 && user.map((user, index) => {
                 if (Math.floor(`${user.id}`) !== profile.id && index <= limitNum) {
                     return (
-                        <Button href={`./${user.id}`} className="trans-btn" key={user.id} >
+                        <Button href={`/profile/${user.id}`} className="trans-btn" key={user.id} >
                             <img 
-                                className="friend-profile profilePicMd profilePic" 
+                                className="friend-profile profilePicMd" 
                                 alt={user.id} 
                                 key={user.id} 
                                 props={user.id} 
@@ -49,8 +44,8 @@ const Friends = ( props ) => {
                         )
                     }
             })}
-            <Link to="/friends">
-                <img className="friend-profile profilePicMd profilePic" alt="All Friends"src={dots} width={100} />
+            <Link to="/friends" >
+                <img className="friend-profile profilePicMd" alt="All Friends"src={dots} width={100} />
             </Link>
         </div>
     )
@@ -61,4 +56,4 @@ const Friends = ( props ) => {
 //the limitNum is dynamic (via props) for future use in seeing 'all' friends when that page is made
 
 
-export default Friends;
+export default FriendsList;

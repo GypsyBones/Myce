@@ -1,4 +1,5 @@
 import './App.css';
+import { React, useState } from "react";
 import Navbar from './Components/NavBar/nav.js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Communities from './Components/Pages/Communities.js';
@@ -14,14 +15,28 @@ import Settings from './Components/Pages/Settings.js';
 import CreateNew from './Components/Pages/CreateNew.js';
 import Notifications from './Components/Pages/Notifications.js';
 import Friends from './Components/Pages/Friends.js'
-import Footer from './Components/Other/Footer.js';
+//import Footer from './Components/Other/Footer.js';
 
 
 function App() {
+  const [showNav, setShowNav] = useState(true);
+
+  // const setNav = (e) => {
+  //   console.log(e)
+  //   if (showNav === true) {
+  //     setShowNav(false)
+  //   } else {
+  //     setShowNav(true)
+  //   }
+  // }
+
   const userId = "1"
+
   return (
     <Router>
+      { showNav && 
       <Navbar />
+      }
       <Routes>
         <Route path='/' exact element={<Home  props={userId}/>} />
         <Route path='/about' exact element={<About  props={userId}/>} />

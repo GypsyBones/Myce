@@ -49,6 +49,9 @@ hr {
     margin: auto;
     background: #fff;
 }
+.home-container {
+  padding-top: 80px;
+}
 
 .title2 {
   font-size: 40px;
@@ -85,8 +88,6 @@ hr {
 }
 .profilePicLg {
   position: flex;
-  margin-top: -80px;
-  margin-left: 50px;
   border: solid;
   height: 150px;
   width: 150px;

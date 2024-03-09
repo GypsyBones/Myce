@@ -155,6 +155,11 @@ hr {
     margin-left: 35px;
 }
 
+.profilePic {
+    margin-left: 50px;
+    margin-top: -75px;
+}
+
 .comments-container {
     margin-left: 15px !important;
     margin-right: 15px !important;
@@ -184,6 +189,14 @@ hr {
     margin: 15px;
 }
 
+.post-dropdown-container {
+    width: 150px !important;
+}
+
+.dropdown-post {
+    color:black !important;
+}
+
 .profile-stats p {
     list-style: none;
     color: #330d42;
@@ -202,8 +215,31 @@ hr {
     font-weight: normal;
     padding: 0px;
   }
-  
 
+  .friends-page-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .friends-pg-list-row {
+    height: auto;
+    align-items: center;
+  }
+
+  .friends-pg-avatar {
+    text-align: center;
+  }
+
+.friends-card-pg-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+  
 @media screen and (max-width: 960px) {
     .headerImg {
         width: 100%;

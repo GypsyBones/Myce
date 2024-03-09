@@ -1,10 +1,29 @@
-import React from 'react';
+import { React } from 'react';
+import { useParams } from "react-router-dom";
+import { Container, Col, Row, Card } from 'react-bootstrap';
+import HomeFeed from '../Profile/HomeFeed.js';
+import ProfileComp from '../Profile/profileComp.js';
 
-const Home = props => {
+const Home = (props) => {
+  let myId = Math.floor(props.props);
+  let profile = ProfileComp(myId);
+  console.log("Home:myId + profile", myId, profile);
+
   return (
-    <div className='home'>
-      <h3>Home</h3>
-    </div>
+    <Container fluid="lg" className="container home-container">
+      <Row className="header-image">
+      </Row>
+      <Row>
+        <Col md="3">
+        <p> HELLO </p>
+        </Col>
+        <Col>
+          <HomeFeed profile={profile} id={myId}/>
+        </Col>
+        <Col md="3">
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

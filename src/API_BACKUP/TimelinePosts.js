@@ -1,6 +1,5 @@
 /*posts = [
     {
-        "username": "",
         "content": "",
         "images": ["",],
         "timestamp": "",
@@ -364,5 +363,467 @@ const Posts = [
         ], 
         "id": "15",
         "ProfileId": "3"
+    },
+    {
+        "content": "Just stumbled upon this hidden gem of a bookstore in {actual city/town/etc}. 📚 The ambiance is cozy and inviting, and they have an impressive selection of rare finds!",
+        "images": ["https://images.unsplash.com/photo-1578511161102-485cc0775c6b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+        "timestamp": "2024-03-08T10:00:00",
+        "location": "{actual city/town/etc}",
+        "likes": 87,
+        "superLikes": 5, 
+        "comments": [
+            {
+                "ProfileId": "23",
+                "content": "I love exploring new bookstores! Thanks for sharing.",
+                "timestamp": "2024-03-08T10:10:00"
+            },
+            {
+                "ProfileId": "9",
+                "content": "Looks like a place I need to visit! Thanks for the recommendation.",
+                "timestamp": "2024-03-08T10:20:00"
+            }
+        ],
+        "id": "18",
+        "ProfileId": "12"
+    },
+    {
+        "content": "Visited this quirky coffee shop in {actual city/town/etc} today and tried their lavender latte. 💜☕️ A must-try for all coffee enthusiasts!",
+        "images": ["https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+        "timestamp": "2024-03-08T11:30:00",
+        "location": "{actual city/town/etc}",
+        "likes": 62,
+        "superLikes": 3, 
+        "comments": [
+            {
+                "ProfileId": "5",
+                "content": "Lavender latte sounds intriguing! Adding this to my list of coffee spots to visit.",
+                "timestamp": "2024-03-08T11:40:00"
+            },
+            {
+                "ProfileId": "17",
+                "content": "I've been meaning to try that place! How was the atmosphere?",
+                "timestamp": "2024-03-08T11:50:00"
+            }
+        ],
+        "id": "19",
+        "ProfileId": "29"
+    },
+    {
+        "content": "Spent the afternoon exploring Krakow Botanical Garden. 🌿 Such a serene escape from the hustle and bustle of the city!",
+        "images": ["https://images.unsplash.com/photo-1624027543361-d98545cf2ff2?q=80&w=1636&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+        "timestamp": "2024-03-08T14:00:00",
+        "location": "Krakow Botanical Garden of Krakow, Poland",
+        "likes": 105,
+        "superLikes": 8, 
+        "comments": [
+            {
+                "ProfileId": "7",
+                "content": "Beautiful! I love botanical gardens, they're so peaceful.",
+                "timestamp": "2024-03-08T14:10:00"
+            },
+            {
+                "ProfileId": "14",
+                "content": "I've been meaning to visit! How are the flower displays?",
+                "timestamp": "2024-03-08T14:20:00"
+            }
+        ],
+        "id": "20",
+        "ProfileId": "8"
+    },
+    {
+        "content": "Discovered this charming little art gallery tucked away in Svalbard, Norway. 🎨 Each piece tells a story!",
+        "images": ["https://images.unsplash.com/photo-1549191044-261643adbec7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+        "timestamp": "2024-03-08T16:30:00",
+        "location": "Svalbard, Norway",
+        "likes": 78,
+        "superLikes": 4, 
+        "comments": [
+            {
+                "ProfileId": "26",
+                "content": "Art galleries are my favorite places to get inspired! Thanks for sharing.",
+                "timestamp": "2024-03-08T16:40:00"
+            },
+            {
+                "ProfileId": "3",
+                "content": "I love stumbling upon hidden gems like this! How's the variety of art?",
+                "timestamp": "2024-03-08T16:50:00"
+            }
+        ],
+        "id": "21",
+        "ProfileId": "19"
+    },
+    {
+        "content": "Tried a unique fusion dish at this family-owned restaurant in Laos. 🍽️ Combining flavors from different cultures, it was a culinary delight!",
+        "images": [""],
+        "timestamp": "2024-03-08T19:00:00",
+        "location": "Luang Prabang, Laos",
+        "likes": 94,
+        "superLikes": 6, 
+        "comments": [
+            {
+                "ProfileId": "13",
+                "content": "Sounds amazing! What was the dish you tried?",
+                "timestamp": "2024-03-08T19:10:00"
+            },
+            {
+                "ProfileId": "30",
+                "content": "I love trying new food! Was it spicy?",
+                "timestamp": "2024-03-08T19:20:00"
+            }
+        ],
+        "id": "22",
+        "ProfileId": "2"
+    },
+    {
+        "content": "Ventured into this vintage vinyl store in {actual city/town/etc} and stumbled upon some hidden gems! 🎶 Adding to my vinyl collection.",
+        "images": ["vinyl_store.jpg"],
+        "timestamp": "2024-03-08T21:30:00",
+        "location": "{actual city/town/etc}",
+        "likes": 81,
+        "superLikes": 7, 
+        "comments": [
+            {
+                "ProfileId": "31",
+                "content": "I've been looking for a good vinyl store! Are their prices reasonable?",
+                "timestamp": "2024-03-08T21:40:00"
+            },
+            {
+                "ProfileId": "22",
+                "content": "Vinyl hunting is so exciting! Did you find any rare records?",
+                "timestamp": "2024-03-08T21:50:00"
+            }
+        ],
+        "id": "23",
+        "ProfileId": "11"
+    },
+    {
+        "content": "Took a spontaneous road trip to {actual city/town/etc}'s countryside and stumbled upon this charming farmer's market. 🌽 Fresh produce galore!",
+        "images": ["farmers_market.jpg"],
+        "timestamp": "2024-03-09T10:00:00",
+        "location": "{actual city/town/etc}",
+        "likes": 112,
+        "superLikes": 9, 
+        "comments": [
+            {
+                "ProfileId": "28",
+                "content": "I love farmer's markets! Did you buy anything fresh?",
+                "timestamp": "2024-03-09T10:10:00"
+            },
+            {
+                "ProfileId": "10",
+                "content": "That sounds like a perfect day! How's the atmosphere there?",
+                "timestamp": "2024-03-09T10:20:00"
+            }
+        ],
+        "id": "24",
+        "ProfileId": "16"
+    },
+    {
+        "content": "Explored this off-the-beaten-path hiking trail in {actual city/town/etc}. 🥾 The views were breathtaking!",
+        "images": ["hiking_trail.jpg"],
+        "timestamp": "2024-03-09T12:30:00",
+        "location": "{actual city/town/etc}",
+        "likes": 98,
+        "superLikes": 6, 
+        "comments": [
+            {
+                "ProfileId": "20",
+                "content": "I'm always on the lookout for new hiking spots! How difficult was the trail?",
+                "timestamp": "2024-03-09T12:40:00"
+            },
+            {
+                "ProfileId": "4",
+                "content": "Nature hikes are the best! Any wildlife sightings?",
+                "timestamp": "2024-03-09T12:50:00"
+            }
+        ],
+        "id": "25",
+        "ProfileId": "27"
+    },
+    {
+        "content": "Checked out this cozy little teahouse in {actual city/town/etc} and indulged in some exotic blends. ☕️ Perfect spot for a rainy day!",
+        "images": ["teahouse.jpg"],
+        "timestamp": "2024-03-09T15:00:00",
+        "location": "{actual city/town/etc}",
+        "likes": 73,
+        "superLikes": 4, 
+        "comments": [
+            {
+                "ProfileId": "15",
+                "content": "I adore tea! What blends did you try?",
+                "timestamp": "2024-03-09T15:10:00"
+            },
+            {
+                "ProfileId": "32",
+                "content": "Tea and rainy days go hand in hand! How's the ambiance there?",
+                "timestamp": "2024-03-09T15:20:00"
+            }
+        ],
+        "id": "26",
+        "ProfileId": "21"
+    },
+    {
+        "content": "Explored this historical landmark in {actual city/town/etc} and learned so much about its rich heritage. 🏰 History buffs, this one's for you!",
+        "images": ["historical_landmark.jpg"],
+        "timestamp": "2024-03-09T17:30:00",
+        "location": "{actual city/town/etc}",
+        "likes": 88,
+        "superLikes": 5, 
+        "comments": [
+            {
+                "ProfileId": "12",
+                "content": "I'm fascinated by history! What was the most interesting thing you learned?",
+                "timestamp": "2024-03-09T17:40:00"
+            },
+            {
+                "ProfileId": "6",
+                "content": "Historical sites are like stepping into the past! Any ghost stories associated with it?",
+                "timestamp": "2024-03-09T17:50:00"
+            }
+        ],
+        "id": "27",
+        "ProfileId": "18"
+    },
+    {
+        "content": "Visited this unique museum dedicated to {random niche interest} in {actual city/town/etc}. 🤓 A fascinating glimpse into a lesser-known aspect of {random niche interest}!",
+        "images": ["niche_museum.jpg"],
+        "timestamp": "2024-03-09T20:00:00",
+        "location": "{actual city/town/etc}",
+        "likes": 84,
+        "superLikes": 6, 
+        "comments": [
+            {
+                "ProfileId": "11",
+                "content": "I've never heard of a museum dedicated to {random niche interest}! What kind of exhibits did they have?",
+                "timestamp": "2024-03-09T20:10:00"
+            },
+            {
+                "ProfileId": "1",
+                "content": "That sounds intriguing! How did you come across it?",
+                "timestamp": "2024-03-09T20:20:00"
+            }
+        ],
+        "id": "28",
+        "ProfileId": "25"
+    },
+    {
+        "content": "Discovered this quaint little bakery in {actual city/town/etc} that specializes in {unique pastry}. 🥐 Their pastries are to die for!",
+        "images": ["bakery.jpg"],
+        "timestamp": "2024-03-10T10:00:00",
+        "location": "{actual city/town/etc}",
+        "likes": 102,
+        "superLikes": 7, 
+        "comments": [
+            {
+                "ProfileId": "2",
+                "content": "I have a weakness for pastries! What's your favorite item from there?",
+                "timestamp": "2024-03-10T10:10:00"
+            },
+            {
+                "ProfileId": "8",
+                "content": "Yum! Do they have any savory options too?",
+                "timestamp": "2024-03-10T10:20:00"
+            }
+        ],
+        "id": "29",
+        "ProfileId": "13"
+    },
+    {
+        "content": "Took a detour and stumbled upon this colorful street art alley in {actual city/town/etc}. 🎨 Every corner is a canvas!",
+        "images": ["street_art.jpg"],
+        "timestamp": "2024-03-10T13:30:00",
+        "location": "{actual city/town/etc}",
+        "likes": 79,
+        "superLikes": 4, 
+        "comments": [
+            {
+                "ProfileId": "19",
+                "content": "Street art is so vibrant! Any particular mural that caught your eye?",
+                "timestamp": "2024-03-10T13:40:00"
+            },
+            {
+                "ProfileId": "14",
+                "content": "I love stumbling upon unexpected art! Was it a long alley?",
+                "timestamp": "2024-03-10T13:50:00"
+            }
+        ],
+        "id": "30",
+        "ProfileId": "30"
+    },
+    {
+        "content": "Explored this hidden nature reserve just outside {actual city/town/etc}. 🌳 Serene trails and abundant wildlife sightings!",
+        "images": ["nature_reserve.jpg"],
+        "timestamp": "2024-03-10T16:00:00",
+        "location": "{actual city/town/etc}",
+        "likes": 96,
+        "superLikes": 8, 
+        "comments": [
+            {
+                "ProfileId": "24",
+                "content": "Nature reserves are so peaceful! Did you spot any rare birds?",
+                "timestamp": "2024-03-10T16:10:00"
+            },
+            {
+                "ProfileId": "31",
+                "content": "I'm always looking for new hiking spots! Is it easy to access?",
+                "timestamp": "2024-03-10T16:20:00"
+            }
+        ],
+        "id": "31",
+        "ProfileId": "26"
+    },
+    {
+        "content": "Visited this artisanal cheese shop in {actual city/town/etc} and sampled some delectable cheeses. 🧀 Pair them with wine for the ultimate experience!",
+        "images": ["cheese_shop.jpg"],
+        "timestamp": "2024-03-10T19:30:00",
+        "location": "{actual city/town/etc}",
+        "likes": 85,
+        "superLikes": 6, 
+        "comments": [
+            {
+                "ProfileId": "27",
+                "content": "I'm a cheese enthusiast! Any recommendations?",
+                "timestamp": "2024-03-10T19:40:00"
+            },
+            {
+                "ProfileId": "23",
+                "content": "Cheese and wine pairings are my favorite! Did you find any unique combinations?",
+                "timestamp": "2024-03-10T19:50:00"
+            }
+        ],
+        "id": "32",
+        "ProfileId": "10"
+    },
+    {
+        "content": "Stumbled upon this antique store in {actual city/town/etc} and found some hidden treasures. 🕰️ Vintage finds make the best home decor!",
+        "images": ["antique_store.jpg"],
+        "timestamp": "2024-03-11T10:00:00",
+        "location": "{actual city/town/etc}",
+        "likes": 91,
+        "superLikes": 7, 
+        "comments": [
+            {
+                "ProfileId": "16",
+                "content": "Antique shopping is so exciting! Did you find anything unique?",
+                "timestamp": "2024-03-11T10:10:00"
+            },
+            {
+                "ProfileId": "21",
+                "content": "I love decorating with vintage pieces! Any particular era they specialize in?",
+                "timestamp": "2024-03-11T10:20:00"
+            }
+        ],
+        "id": "33",
+        "ProfileId": "5"
+    },
+    {
+        "content": "Attended a live jazz performance at this intimate venue in {actual city/town/etc}. 🎷 The music was soul-stirring!",
+        "images": ["jazz_performance.jpg"],
+        "timestamp": "2024-03-11T14:30:00",
+        "location": "{actual city/town/etc}",
+        "likes": 76,
+        "superLikes": 5, 
+        "comments": [
+            {
+                "ProfileId": "33",
+                "content": "Live jazz is the best! Who was performing?",
+                "timestamp": "2024-03-11T14:40:00"
+            },
+            {
+                "ProfileId": "18",
+                "content": "I adore jazz music! How was the atmosphere?",
+                "timestamp": "2024-03-11T14:50:00"
+            }
+        ],
+        "id": "34",
+        "ProfileId": "7"
+    },
+    {
+        "content": "Explored this quirky museum dedicated to {random unusual theme} in {actual city/town/etc}. 🤔 Definitely a one-of-a-kind experience!",
+        "images": ["quirky_museum.jpg"],
+        "timestamp": "2024-03-11T18:00:00",
+        "location": "{actual city/town/etc}",
+        "likes": 82,
+        "superLikes": 6, 
+        "comments": [
+            {
+                "ProfileId": "4",
+                "content": "I'm intrigued! What kind of exhibits did they have?",
+                "timestamp": "2024-03-11T18:10:00"
+            },
+            {
+                "ProfileId": "29",
+                "content": "Quirky museums are the best! How did you find out about it?",
+                "timestamp": "2024-03-11T18:20:00"
+            }
+        ],
+        "id": "35",
+        "ProfileId": "15"
+    },
+    {
+        "content": "Discovered this cozy little teahouse in {actual city/town/etc} and indulged in some exotic blends. ☕️ Perfect spot for a rainy day!",
+        "images": ["teahouse2.jpg"],
+        "timestamp": "2024-03-11T20:30:00",
+        "location": "{actual city/town/etc}",
+        "likes": 79,
+        "superLikes": 4, 
+        "comments": [
+            {
+                "ProfileId": "3",
+                "content": "Tea and rainy days go hand in hand! How's the ambiance there?",
+                "timestamp": "2024-03-11T20:40:00"
+            },
+            {
+                "ProfileId": "24",
+                "content": "I adore tea! What blends did you try?",
+                "timestamp": "2024-03-11T20:50:00"
+            }
+        ],
+        "id": "36",
+        "ProfileId": "22"
+    },
+    {
+        "content": "Explored this hidden gem of a park in {actual city/town/etc}. 🌳 Serene pathways and picturesque views!",
+        "images": ["park.jpg"],
+        "timestamp": "2024-03-12T10:00:00",
+        "location": "{actual city/town/etc}",
+        "likes": 95,
+        "superLikes": 8, 
+        "comments": [
+            {
+                "ProfileId": "9",
+                "content": "Hidden parks are the best! Is it crowded?",
+                "timestamp": "2024-03-12T10:10:00"
+            },
+            {
+                "ProfileId": "20",
+                "content": "I love discovering new parks! Are there any unique features?",
+                "timestamp": "2024-03-12T10:20:00"
+            }
+        ],
+        "id": "37",
+        "ProfileId": "17"
+    },
+    {
+        "content": "Visited this artisanal ice cream parlor in {actual city/town/etc} and tried their unique flavors. 🍦 A delightful treat on a sunny day!",
+        "images": ["ice_cream_parlor.jpg"],
+        "timestamp": "2024-03-12T14:30:00",
+        "location": "{actual city/town/etc}",
+        "likes": 81,
+        "superLikes": 5, 
+        "comments": [
+            {
+                "ProfileId": "1",
+                "content": "I love trying new ice cream flavors! Which one was your favorite?",
+                "timestamp": "2024-03-12T14:40:00"
+            },
+            {
+                "ProfileId": "12",
+                "content": "Ice cream is always a good idea! Do they have any vegan options?",
+                "timestamp": "2024-03-12T14:50:00"
+            }
+        ],
+        "id": "38",
+        "ProfileId": "28"
     }
 ]

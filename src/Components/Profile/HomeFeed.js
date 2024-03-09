@@ -4,25 +4,24 @@ import { Col, Row, Card, Form, Button } from 'react-bootstrap';
 
 
 import ProfileComp from '../Profile/profileComp.js';
-import Posts from "../Profile/Posts.js";
+import HomePosts from "../Profile/HomePosts.js";
 import Debug from "../Other/Debug.js";
 
 import submit from '../../Icons/icons8-right-button-50.png';
 import defaultUserPic from '../../Icons/icons8-user-default-50.png';
 
 
-const ProfileFeed = (props) => {
-  const { id } = useParams();
-  const browserId = Math.floor(id)
-  const user = ProfileComp(browserId);
-  let myId = Math.floor(props.id.props)
-  console.log("profilefeed:", myId)
+const HomeFeed = (props) => {
+  let myId = Math.floor(props.id);
+  const user = ProfileComp(myId);
+
+  console.log("homefeed myId:",myId, props);
   const POSTS_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Posts`
   
   const [ posts, setPosts ] = useState([]);
 
   const [updatePosts, setUpdatePosts] = useState(false);
-  const [content, setContent] = useState("")
+  const [content, setContent] = useState("");
 
   const handleContent = (e) => {
     setContent(e.target.value);
@@ -38,7 +37,7 @@ const ProfileFeed = (props) => {
 
   useEffect(() => {
     getPosts()
-  }, [browserId, updatePosts])
+  }, [myId, updatePosts])
 
   function handleSubmit(){
     const d = new Date();
@@ -66,7 +65,6 @@ const ProfileFeed = (props) => {
     return (
         <Row>
             <Col >
-            {myId === browserId ? 
               <div className="container post-cards">
                   <Card className="post-input">
                     <Card.Body className="post-username">
@@ -97,40 +95,10 @@ const ProfileFeed = (props) => {
                     </Card.Body>
                   </Card>
               </div>
-              : <div></div>}
-              <Posts profile={props.profile} id={myId} posts={posts} getPosts={getPosts} />              
+              <HomePosts profile={user} id={myId} posts={posts} getPosts={getPosts} />              
             </Col>
           </Row>
     );
 };
 
-export default ProfileFeed;
-
-
-// async function postJSON(data) {
-//   const d = newDate();
-//   const date = d.toISOString()
-
-//   fetch(POSTS_URL, {
-//       method: "POST",
-//       body: JSON.stringify({
-//           "content": "",
-//           "images": [""],
-//           "timestamp": date,
-//           "location": user.location,
-//           "likes": 0,
-//           "superLikes": 0, 
-//           "comments": [
-//               {},
-//           ],
-//           "ProfileId": user.id
-//       }),
-//       headers: {
-//           "Content-type": "application/json; charset=UTF-8"
-//       }
-//   })
-//   .then((res) => res.json())
-//   .then((data) => {
-//       setPosts(data);
-//   })
-// }
+export default HomeFeed;

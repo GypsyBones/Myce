@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import Debug from '../Other/Debug.js';
+//import Debug from '../Other/Debug.js';
 
 function ProfileComp(id) {
     //const { id: id } = useParams() 
     //takes id from browser and attributes it to the variable
     const API_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Profiles/${id}`; 
     //grabs information about user from the mockapi using the variable
-
     const [ user, setUser ] = useState([]);
     useEffect(() => {
         fetch(API_URL)

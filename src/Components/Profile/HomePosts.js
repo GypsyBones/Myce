@@ -20,11 +20,13 @@ import submit from '../../Icons/icons8-right-button-50.png';
 
 
 
-const Posts = ({ posts, id, getPosts }) => {
+const Posts = ( props ) => {
     const POSTS_URL = `https://65a096c3600f49256fb0123d.mockapi.io/api/v1/Posts`
-    let { id: UserId } = useParams();
-    let user = ProfileComp(UserId); 
-    let myId = Math.floor(id);
+    let posts = props.posts
+    let myId = Math.floor(props.id);
+    let user = ProfileComp(myId);
+
+    console.log("Post.js:prop + myId:", myId, props);
 
     const [open, setOpen] = useState(false);
     const [updatedPostId, setUpdatedPostId] = useState("");
@@ -55,7 +57,7 @@ const Posts = ({ posts, id, getPosts }) => {
           body: JSON.stringify(updatedPost),
         })
         .then(setOpen(!open))
-        .then(getPosts);
+        .then(props.getPosts);
     }
 
 
@@ -63,7 +65,7 @@ const Posts = ({ posts, id, getPosts }) => {
         console.log('DeletePost is getting triggered')
       fetch(`${POSTS_URL}/${id}`, {
         method: 'DELETE'
-      }).then(() => getPosts())
+      }).then(() => props.getPosts())
     }
   
 
@@ -73,7 +75,7 @@ const Posts = ({ posts, id, getPosts }) => {
 
     return (
         <Container>
-            {posts.length > 0 && posts.map((post, index) => {
+            {posts.length > 0 && posts.map((post, ProfileId) => {
                 const  {
                     id,
                     content,
@@ -82,11 +84,9 @@ const Posts = ({ posts, id, getPosts }) => {
                     likes,
                     superLikes,
                     comments,
-                    ProfileId 
                 } = post; 
-
-                if (ProfileId === UserId) {
-                    return (
+                console.log(ProfileId)
+                return (
                     <Card className="post-cards" key={`${user.id}${id}`} post={post}>
                         <Card.Header>
                             <Row className="post-header">
@@ -114,7 +114,7 @@ const Posts = ({ posts, id, getPosts }) => {
                             </Row>
                         </Card.Header>
                         <Card.Body className="post-card-body">
-                            {open === true && updatedPostId === id ?
+                            {open === true && updatedPostId === id  && updatedPostId === myId ?
                             <Row>
                                 <Form>
                                     <Form.Group className="col md-10">
@@ -167,7 +167,6 @@ const Posts = ({ posts, id, getPosts }) => {
                         </Row>
                     </Card>
                 )
-            } 
         })}
         </Container> 
     )} 

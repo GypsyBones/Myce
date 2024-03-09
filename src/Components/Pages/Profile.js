@@ -1,17 +1,14 @@
-import { React, useState, useEffect } from "react";
+import { React } from "react";
 import { useParams } from "react-router-dom";
-import { Container, Col, Row, Card, Form, Button } from 'react-bootstrap';
+import { Container, Col, Row, Card } from 'react-bootstrap';
 import './Profile.css'
-import Debug from "../Other/Debug.js";
 
 
 import profileComp from '../Profile/profileComp.js';
-import Friends from '../Profile/Friends.js';
+import Friends from '../Profile/FriendsList.js';
 import ProfileFeed from '../Profile/ProfileFeed.js'
 
 import defaultUserPic from '../../Icons/icons8-user-default-50.png';
-import Posts from "../Profile/Posts.js";
-import submit from '../../Icons/icons8-right-button-50.png';
 
 
 const Profile = (props) => {
@@ -21,31 +18,13 @@ const Profile = (props) => {
   console.log(userId)
   let myId = props
 
-  // useEffect(() => {
-  //   const changeProfile = () => {
-  //     setProfile(user)
-  //   }; 
-  //   changeProfile();
-  //   Debug("profile:setProfile", profile)
-  // }, [])
-
-
-//id differentiation between browser and props for post creation ability only on own profile page
-  //var friendId = "";
-  //let [profile, setProfile] = useState(friendId);
-  //function handleProfile(friendId) {
-  //  setProfile(friendId)
- // }
- //tried to do a state handle change through the child component Friends
-
-
   return (
     <Container fluid="lg" className="container">
       <Row className="header show-grid">
           <img className="headerImg" src={profile.header} />
       </Row>
       <Row className="row-name">
-        <Col md="2">
+        <Col md="2" className="profile-pic-container">
             <img 
               className="profilePicLg profilePic" 
               src={profile.avatar || defaultUserPic} />
@@ -87,7 +66,7 @@ const Profile = (props) => {
                 <Card className="friends-card">
                   <Card.Header className="post-profilename">Friends:</Card.Header>
                   <Card.Body className="friends-card-body">
-                    <Friends profile={profile} />
+                    <Friends profile={profile} id={myId} limit='15'/>
                   </Card.Body>
                 </Card>
               </Row>

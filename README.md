@@ -37,10 +37,3 @@ The requirements for this assignment were:
         - UPDATE - you can update your post 
         - DELETE - you can delete a Post
 
-
-Mentor Meet
-- changing state from within a child to a parent
-    - to grandparent??
-    - might need for put/post but also FRIENDS (click on friend, new page doesn't change state of Profile)
-- put/post comments/posts
-    - comments are an objects-array within the objects-array of posts 

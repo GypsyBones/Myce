@@ -91,7 +91,7 @@ const Posts = ({ posts, id, getPosts }) => {
                         <Card.Header>
                             <Row className="post-header">
                                 <Col md="1">
-                                    <Button href={`./${user.id}`} className="trans-btn">
+                                    <Button href={`/profile/${user.id}`} className="trans-btn">
                                         <img className="profilePicSm" src={user.avatar || defaultUserPic} alt={user.id}/>
                                     </Button>
                                 </Col>

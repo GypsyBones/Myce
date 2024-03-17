@@ -36,12 +36,12 @@ function Comments(props) {
                 <div key={`${props.id}:${id}`}>
                     <Row className="comment-header">
                         <Col className='no-pad' md="2">
-                            <Button href={`./${profile.id}`} className="trans-btn">
+                            <Button href={`/profile/${profile.id}`} className="trans-btn">
                                 <img className="profilePicSm" src={profile.avatar || defaultUserPic} alt={`profile${profile.name}`}/>
                             </Button>
                         </Col>
                         <Col className='no-pad' md="5">
-                            <p>{profile.username}</p>
+                            <Link to={`/profile/${profile.id}`} className="post-username">{profile.username}</Link>
                         </Col>
                         <Col className='no-pad' md="3">
                             <span className="timestamp">{TimeStamp(timestamp)}</span>

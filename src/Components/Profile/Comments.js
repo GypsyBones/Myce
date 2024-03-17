@@ -1,6 +1,7 @@
 //import { useState } from 'react';
 import { Col, Row, Form, Button } from 'react-bootstrap';
 import { React, } from "react";
+import Link from 'react-router-dom';
 
 import profileComp from './profileComp';
 import TimeStamp from '../Other/TimeStamp.js';

@@ -1,7 +1,7 @@
 import './App.css';
 import { React, useState } from "react";
 import Navbar from './Components/NavBar/nav.js';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Communities from './Components/Pages/Communities.js';
 import About from './Components/Pages/About.js';
 import Home from './Components/Pages/Home.js';
